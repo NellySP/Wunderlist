@@ -6,10 +6,6 @@
             <a class="nav-link" href="/index.php">Home</a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="/about.php">About</a>
-        </li>
-
         <!-- if the user is set (logged in) don't show the log in button -->
 
         <li class="nav-item">
