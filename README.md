@@ -1,6 +1,6 @@
-INSERT MANDATORY GIF
+<img src="https://media.giphy.com/media/8rXWheJaSY0ak/giphy.gif">
 
-# Project Title
+# Wunderlist
 
 Text about the project and why it exists. This would also be a great place to link the project online.
 
