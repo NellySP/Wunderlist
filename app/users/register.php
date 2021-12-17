@@ -4,13 +4,15 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
+
+
 // In this file we register a new user.
 
-require('db.php');
-session_start();
+// require('db.php');
+// session_start();
 // When form submitted, check and create user session.
 
-require('/app/database/db.php');
+// require('/app/database/db.php');
 // Logik:
 // 1: kolla om användare finns (email) om ja - echo "du är redan medlem!"
 // 2: om inte? Insert men först - >
@@ -18,10 +20,15 @@ require('/app/database/db.php');
 // 4: om success - grattismeddelande
 // 5: om inte - något gick fel
 
+// values from input
+$email = $_POST['email'];
+$full_name =  $_POST['username'];
+$password = $_POST['password'];
+
 //email to check
-$email = "det som skickats in? hur kollar jag det nu igen";
+
 //prepare the statement
-$stmt = $pdo->prepare("SELECT * FROM users WHERE email=?");
+$stmt = $database->prepare("SELECT * FROM Users WHERE email=?");
 //execute the statement
 $stmt->execute([$email]);
 //fetch result
@@ -32,14 +39,14 @@ if ($user) {
     echo "email does not exist";
 }
 
-// values from input
-$email = $_REQUEST['email'];
-$full_name =  $_REQUEST['first_name'];
-$password = $_REQUEST['password'];
+// Fram till hit fungerar det faktiskt!!!! 
 
-// insert query
+// Nu måste jag bara få den att lägga till infon
+
 $sql = "INSERT INTO users VALUES ('$full_name', 
 '$email', '$password')";
 
+// insert query
 
-redirect('/');
+
+// redirect('/');

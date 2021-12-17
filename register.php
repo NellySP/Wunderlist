@@ -4,7 +4,7 @@
 <article>
     <h1>Registration</h1>
 
-    <form class="form" action="/app/users/register.php" method="post">
+    <form class="form" action="/index.php" method="post">
         <label for="username">Username</label>
         <input type="text" name="username" placeholder="Username" required />
         <label for="email">Email</label>
