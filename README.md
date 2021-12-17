@@ -1,4 +1,4 @@
-<img src="https://media.giphy.com/media/8rXWheJaSY0ak/giphy.gif">
+<img src="https://media.giphy.com/media/QMHoU66sBXqqLqYvGO/giphy.gif">
 
 # Wunderlist
 
