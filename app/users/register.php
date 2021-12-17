@@ -37,5 +37,9 @@ $email = $_REQUEST['email'];
 $full_name =  $_REQUEST['first_name'];
 $password = $_REQUEST['password'];
 
+// insert query
+$sql = "INSERT INTO users VALUES ('$full_name', 
+'$email', '$password')";
+
 
 redirect('/');
