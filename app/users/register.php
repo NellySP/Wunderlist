@@ -32,5 +32,10 @@ if ($user) {
     echo "email does not exist";
 }
 
+// values from input
+$email = $_REQUEST['email'];
+$full_name =  $_REQUEST['first_name'];
+$password = $_REQUEST['password'];
+
 
 redirect('/');
