@@ -11,6 +11,12 @@ session_start();
 // When form submitted, check and create user session.
 
 require('/app/database/db.php');
+// Logik:
+// 1: kolla om användare finns (email) om ja - echo "du är redan medlem!"
+// 2: om inte? Insert men först - >
+// 3: sanitera, validera, hasha och cutta
+// 4: om success - grattismeddelande
+// 5: om inte - något gick fel
 // When form submitted, insert values into the database.
 if (isset($_REQUEST['username'])) {
     // removes backslashes
