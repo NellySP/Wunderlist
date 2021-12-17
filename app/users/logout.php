@@ -8,4 +8,11 @@ require __DIR__ . '/../autoload.php';
 
 unset($_SESSION['user']);
 
+session_start();
+// Destroy session
+if (session_destroy()) {
+    // Redirecting To Home Page
+    header("Location: login.php");
+}
+
 redirect('/');
