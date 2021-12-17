@@ -4,21 +4,14 @@
 <article>
     <h1>Registration</h1>
 
-    <form action="app/users/login.php" method="post">
-        <div class="mb-3">
-            <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" id="email" placeholder="francis@darjeeling.com" required>
-            <small class="form-text">Please provide the your email address.</small>
-        </div>
-
-        <div class="mb-3">
-            <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password" required>
-            <small class="form-text">Please provide the your password (passphrase).</small>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Login</button>
+    <form class="form" action="" method="post">
+        <input type="text" class="login-input" name="username" placeholder="Username" required />
+        <input type="text" class="login-input" name="email" placeholder="Email Adress">
+        <input type="password" class="login-input" name="password" placeholder="Password">
+        <input type="submit" name="submit" value="Register" class="login-button">
+        <p class="link"><a href="login.php">Click to Login</a></p>
     </form>
+
 </article>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
