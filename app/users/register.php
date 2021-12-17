@@ -17,6 +17,23 @@ require('/app/database/db.php');
 // 3: sanitera, validera, hasha och cutta
 // 4: om success - grattismeddelande
 // 5: om inte - något gick fel
+
+//email to check
+$email = "det som skickats in? hur kollar jag det nu igen";
+//prepare the statement
+$stmt = $pdo->prepare("SELECT * FROM users WHERE email=?");
+//execute the statement
+$stmt->execute([$email]);
+//fetch result
+$user = $stmt->fetch();
+if ($user) {
+    echo 'you already have an account!';
+} else {
+    echo "email does not exist";
+}
+
+
+
 // When form submitted, insert values into the database.
 if (isset($_REQUEST['username'])) {
     // removes backslashes
