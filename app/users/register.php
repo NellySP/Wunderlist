@@ -1,4 +1,5 @@
 <?php
+
 // In this file we register a new user.
 
 // ATT GÖRA:
