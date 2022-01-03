@@ -21,22 +21,20 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $email = trim($_POST['email']);
     $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
+    $statement->bindParam(':email', $email, PDO::PARAM_STR);
+    $statement->bindParam(':username', $username, PDO::PARAM_STR);
+    $statement->bindParam(':password', $hashed_password, PDO::PARAM_STR);
     // check if email exist in db
 
     //prepare the statement
-    $statement->bindParam(':email', $email, PDO::PARAM_STR);
     $statement = $database->prepare('SELECT email FROM Users WHERE email = :email');
     //execute the statement
     $statement->execute();
     $checkEmail = $statement->fetch(PDO::FETCH_ASSOC);
     if ($checkEmail !== false) {
         echo "you already have an account!";
+        redirect('/register.php');
     }
-
-    // $statement->bindParam(':email', $email, PDO::PARAM_STR);
-    // $statement->bindParam(':user_name', $username, PDO::PARAM_STR);
-    // $statement->bindParam(':password', $password, PDO::PARAM_STR);
-
 
     // Nu måste jag bara få den att lägga till infon
 
@@ -45,16 +43,12 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     // insert query
 
     $statement = $database->prepare('INSERT INTO Users
-(username, email, password)
-VALUES
-(:username, :email, :password)');
-
-    $statement->bindParam(':username', $username, PDO::PARAM_STR);
-    $statement->bindParam(':email', $email, PDO::PARAM_STR);
-    $statement->bindParam(':password', $hashed_password, PDO::PARAM_STR);
+    (username, email, password)
+    VALUES
+    (:username, :email, :password)');
 
     $statement->execute();
 
 
-    // redirect('/');
+    redirect('/');
 }
