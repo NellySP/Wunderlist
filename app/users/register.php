@@ -17,13 +17,18 @@ require __DIR__ . '/../autoload.php';
 // 5: om inte - något gick fel
 
 // values from input
-$email = $_POST['email'];
-$user_name =  $_POST['username'];
-$password = $_POST['password'];
+if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
+    $username = trim($_POST['username']);
+    $email = trim($_POST['email']);
+    $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-$statement->bindParam(':email', $email, PDO::PARAM_STR);
-$statement->bindParam(':user_name', $username, PDO::PARAM_STR);
-$statement->bindParam(':password', $password, PDO::PARAM_STR);
+// $email = $_POST['email'];
+// $user_name =  $_POST['username'];
+// $password = $_POST['password'];
+
+// $statement->bindParam(':email', $email, PDO::PARAM_STR);
+// $statement->bindParam(':user_name', $username, PDO::PARAM_STR);
+// $statement->bindParam(':password', $password, PDO::PARAM_STR);
 
 //email to check
 
@@ -39,7 +44,7 @@ if ($user) {
     echo "email does not exist";
 }
 
-// Fram till hit fungerar det faktiskt!!!!
+// Fram till hit fungerar det faktiskt!!!! inte nu längre
 
 // Nu måste jag bara få den att lägga till infon
 
