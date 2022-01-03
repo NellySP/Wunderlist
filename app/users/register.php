@@ -18,13 +18,14 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
 //prepare the statement
 
 $statement = $database->prepare('SELECT * FROM Users WHERE email = :email');
+$statement->bindParam(':email', $email, PDO::PARAM_STR);
 //execute the statement
 
 $statement->execute();
 $checkEmail = $statement->fetch(PDO::FETCH_ASSOC);
 if ($checkEmail !== false) {
     echo "you already have an account!";
-} else {
+} elseif ($checkEmail === false) {
 
 
     // insert query
