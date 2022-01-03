@@ -7,7 +7,6 @@
 // 2. kommunicera med användaren. istället för att eka på en helt ny sida.
 // 3. emejlfunktions? implemiteras här?
 
-
 declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
