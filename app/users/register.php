@@ -12,7 +12,7 @@ require __DIR__ . '/../autoload.php';
 // Logik:
 // 1: kolla om användare finns (email) om ja - echo "du är redan medlem!"
 // 2: om inte? Insert men först - >
-// 3: sanitera, validera, hasha och cutta - kolla hur man gör detta. 
+// 3: sanitera, validera, hasha och cutta - kolla hur man gör detta.
 // 4: om success - grattismeddelande
 // 5: om inte - något gick fel
 
@@ -35,7 +35,7 @@ if ($user) {
     echo "email does not exist";
 }
 
-// Fram till hit fungerar det faktiskt!!!! 
+// Fram till hit fungerar det faktiskt!!!!
 
 // Nu måste jag bara få den att lägga till infon
 
