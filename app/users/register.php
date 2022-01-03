@@ -19,6 +19,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
 
 $statement = $database->prepare('SELECT * FROM Users WHERE email = :email');
 $statement->bindParam(':email', $email, PDO::PARAM_STR);
+
 //execute the statement
 
 $statement->execute();
@@ -28,12 +29,14 @@ if ($checkEmail !== false) {
 } elseif ($checkEmail === false) {
 
 
-    // insert query
+    // insert new user in to db
 
     $statement = $database->prepare('INSERT INTO Users
     (username, email, password)
     VALUES
     (:username, :email, :password)');
+
+    // varför är password i blått ovan? Det är skumt.
 
     $statement->bindParam(':email', $email, PDO::PARAM_STR);
     $statement->bindParam(':username', $username, PDO::PARAM_STR);
@@ -41,6 +44,7 @@ if ($checkEmail !== false) {
 
     $statement->execute();
 
+    // redirect user to index page
 
     redirect('/');
 }
