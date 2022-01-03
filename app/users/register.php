@@ -24,13 +24,13 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     // check if email exist in db
 
     //prepare the statement
-    $statement = $database->prepare('SELECT email FROM Users WHERE email = :email');
     $statement->bindParam(':email', $email, PDO::PARAM_STR);
+    $statement = $database->prepare('SELECT email FROM Users WHERE email = :email');
     //execute the statement
     $statement->execute();
     $checkEmail = $statement->fetch(PDO::FETCH_ASSOC);
     if ($checkEmail !== false) {
-        $_SESSION['errors'][] = "you already have an account!";
+        echo "you already have an account!";
     }
 
     // $statement->bindParam(':email', $email, PDO::PARAM_STR);
@@ -45,7 +45,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     // insert query
 
     $statement = $database->prepare('INSERT INTO Users
-(user_name, email, password)
+(username, email, password)
 VALUES
 (:username, :email, :password)');
 
@@ -56,5 +56,5 @@ VALUES
     $statement->execute();
 
 
-    redirect('/');
+    // redirect('/');
 }
