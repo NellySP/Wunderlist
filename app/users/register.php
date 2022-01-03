@@ -1,6 +1,12 @@
 <?php
 // In this file we register a new user.
 
+// ATT GÖRA:
+// 1. kolla unikt användarnamn. ish samma som mejlkollen. eller behövs det? kanske inte eftersom man inte interagerar med andra användare faktiskt.
+// 2. kommunicera med användaren. istället för att eka på en helt ny sida.
+// 3. emejlfunktions? implemiteras här?
+
+
 declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
