@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-
-
 // In this file we register a new user.
 
-// values from input
+// values from form input
+
 if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $username = trim($_POST['username']);
     $email = trim($_POST['email']);
@@ -17,13 +16,14 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     // check if email exist in db
 
     //prepare the statement
-    $statement = $database->prepare('SELECT email FROM Users WHERE email = :email');
+
+    $statement = $database->prepare('SELECT * FROM Users WHERE email = :email');
     //execute the statement
+
     $statement->execute();
     $checkEmail = $statement->fetch(PDO::FETCH_ASSOC);
     if ($checkEmail !== false) {
         echo "you already have an account!";
-        redirect('/register.php');
     }
 
     // insert query
@@ -40,5 +40,5 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $statement->execute();
 
 
-    redirect('/');
+    // redirect('/');
 }
