@@ -35,7 +35,6 @@ if ($checkEmail !== false) {
     echo "you already have an account!";
 } elseif ($checkEmail === false) {
 
-
     // insert new user in to db
 
     $statement = $database->prepare('INSERT INTO Users
