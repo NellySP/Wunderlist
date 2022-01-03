@@ -22,7 +22,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $statement->execute();
     $checkEmail = $statement->fetch(PDO::FETCH_ASSOC);
     if ($checkEmail !== false) {
-        $_SESSION['errors'][] = "you already have an account!";
+        echo "you already have an account!";
         redirect('/register.php');
     }
 
