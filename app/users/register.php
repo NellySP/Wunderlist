@@ -22,9 +22,15 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $email = trim($_POST['email']);
     $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-// $email = $_POST['email'];
-// $user_name =  $_POST['username'];
-// $password = $_POST['password'];
+// chech if email exist in db
+
+$statement = $database->prepare('SELECT email FROM Users WHERE email = :email');
+$statement->bindParam(':email', $email, PDO::PARAM_STR);
+$statement->execute();
+$checkEmail = $statement->fetch(PDO::FETCH_ASSOC);
+if ($checkEmail !== false) {
+    $_SESSION['errors'][] = "you already have an account!";
+}
 
 // $statement->bindParam(':email', $email, PDO::PARAM_STR);
 // $statement->bindParam(':user_name', $username, PDO::PARAM_STR);
@@ -40,9 +46,7 @@ $statement->execute([$email]);
 $user = $statement->fetch();
 if ($user) {
     echo 'you already have an account!';
-} else {
-    echo "email does not exist";
-}
+};
 
 // Fram till hit fungerar det faktiskt!!!! inte nu längre
 
