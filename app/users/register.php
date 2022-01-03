@@ -18,17 +18,21 @@ require __DIR__ . '/../autoload.php';
 
 // values from input
 $email = $_POST['email'];
-$full_name =  $_POST['username'];
+$user_name =  $_POST['username'];
 $password = $_POST['password'];
+
+$statement->bindParam(':email', $email, PDO::PARAM_STR);
+$statement->bindParam(':user_name', $username, PDO::PARAM_STR);
+$statement->bindParam(':password', $password, PDO::PARAM_STR);
 
 //email to check
 
 //prepare the statement
-$stmt = $database->prepare("SELECT * FROM Users WHERE email=?");
+$statement = $database->prepare("SELECT * FROM Users WHERE email=?");
 //execute the statement
-$stmt->execute([$email]);
+$statement->execute([$email]);
 //fetch result
-$user = $stmt->fetch();
+$user = $statement->fetch();
 if ($user) {
     echo 'you already have an account!';
 } else {
@@ -39,8 +43,8 @@ if ($user) {
 
 // Nu måste jag bara få den att lägga till infon
 
-$sql = "INSERT INTO users VALUES ('$full_name',
-'$email', '$password')";
+$sql = "INSERT INTO users (user_name, email, password) VALUES (:user_name,
+:email, :password)";
 
 // insert query
 
