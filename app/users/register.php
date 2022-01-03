@@ -26,10 +26,6 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
         redirect('/register.php');
     }
 
-    // Nu måste jag bara få den att lägga till infon
-
-
-
     // insert query
 
     $statement = $database->prepare('INSERT INTO Users
