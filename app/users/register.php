@@ -8,15 +8,11 @@ require __DIR__ . '/../autoload.php';
 
 // In this file we register a new user.
 
-// require('db.php');
-// session_start();
-// When form submitted, check and create user session.
-
 // require('/app/database/db.php');
 // Logik:
 // 1: kolla om användare finns (email) om ja - echo "du är redan medlem!"
 // 2: om inte? Insert men först - >
-// 3: sanitera, validera, hasha och cutta
+// 3: sanitera, validera, hasha och cutta - kolla hur man gör detta. 
 // 4: om success - grattismeddelande
 // 5: om inte - något gick fel
 
@@ -43,7 +39,7 @@ if ($user) {
 
 // Nu måste jag bara få den att lägga till infon
 
-$sql = "INSERT INTO users VALUES ('$full_name', 
+$sql = "INSERT INTO users VALUES ('$full_name',
 '$email', '$password')";
 
 // insert query

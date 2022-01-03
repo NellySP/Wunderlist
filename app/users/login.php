@@ -17,8 +17,8 @@ if (isset($_POST['email'], $_POST['password'])) {
 
     $statement = $database->prepare($query);
 
-    // Här sätter vi en placeholder för variabeln email. 
-    // Detta för att man inte får skicka in variabler i sql-queries. 
+    // Här sätter vi en placeholder för variabeln email.
+    // Detta för att man inte får skicka in variabler i sql-queries.
 
     $statement->bindParam(':email', $email, PDO::PARAM_STR);
 
