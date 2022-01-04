@@ -45,6 +45,8 @@ if (isset($_POST['email'], $_POST['password'])) {
         // Remember to not save the password in the session!
         unset($user['password']);
 
+        // Hur kopplar jag detta id till id i min databas?
+
         $_SESSION['user'] = [
             "id" => $user['id'],
             "name" => $user['username'],

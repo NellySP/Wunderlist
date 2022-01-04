@@ -23,7 +23,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
 
 //prepare the statement
 
-$statement = $database->prepare('SELECT * FROM Users WHERE email = :email');
+$statement = $database->prepare('SELECT * FROM users WHERE email = :email');
 $statement->bindParam(':email', $email, PDO::PARAM_STR);
 
 //execute the statement
