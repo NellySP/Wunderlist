@@ -6,7 +6,11 @@
             <a class="nav-link" href="/index.php">Home</a>
         </li>
 
-        <!-- if the user is set (logged in) don't show the log in button -->
+        <li class="nav-item">
+            <a class="nav-link" href="/profile.php">Profile</a>
+        </li>
+
+        <!-- if the user is logged in don't show the log in button -->
 
         <li class="nav-item">
             <?php if (isset($_SESSION['user'])) : ?>
