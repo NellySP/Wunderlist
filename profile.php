@@ -3,7 +3,7 @@
 require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php'; ?>
 
-<h2>Welcome (fetch username)</h2>
+<h2>Welcome ($fetchusernamefunctionmaybe)</h2>
 
 <img src="" alt="profile picture">
 <!-- form to change profile picture -->
