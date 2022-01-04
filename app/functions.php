@@ -11,3 +11,5 @@ function redirect(string $path)
 // Function to show profile page only if user is logged in
 
 // function to delete user
+
+// fetch username and assign to variable 
