@@ -16,6 +16,10 @@ require __DIR__ . '/views/header.php'; ?>
 <form action=""></form>
 
 <!-- delete user -->
+<form action="/app/users/delete.php">
+    <input type="hidden" name="userid-to-delete" value="<?php echo $userId ?>">
+    <input type="submit" name="delete" value="delete">
+</form>
 <p>Click here to delete your user profile</p>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
