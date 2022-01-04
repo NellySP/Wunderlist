@@ -51,5 +51,5 @@ if ($checkEmail !== false) {
 
     // redirect user to index page
 
-    redirect('/');
+    header('Location: /login.php');
 }
