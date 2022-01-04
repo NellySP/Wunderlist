@@ -6,8 +6,13 @@
             <a class="nav-link" href="/index.php">Home</a>
         </li>
 
+        <!-- show only if user is logged in, make function -->
+
+
         <li class="nav-item">
-            <a class="nav-link" href="/profile.php">Profile</a>
+            <?php if (isset($_SESSION['user'])) : ?>
+                <a class="nav-link" href="/profile.php">Profile</a>
+            <?php endif; ?>
         </li>
 
         <!-- if the user is logged in don't show the log in button -->
