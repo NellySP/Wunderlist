@@ -15,6 +15,12 @@
             <?php endif; ?>
         </li>
 
+        <li class="nav-item">
+            <?php if (isset($_SESSION['user'])) : ?>
+                <a class="nav-link" href="/lists.php">My lists</a>
+            <?php endif; ?>
+        </li>
+
         <!-- if the user is logged in don't show the log in button -->
 
         <li class="nav-item">
