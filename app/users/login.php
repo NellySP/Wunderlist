@@ -55,4 +55,4 @@ if (isset($_POST['email'], $_POST['password'])) {
     };
 }
 
-header('Location: /profile.php');
+redirect('/profile.php');

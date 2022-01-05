@@ -13,6 +13,7 @@ if (isset($_GET['id'])) {
     $statement->execute();
 
     unset($_SESSION['user']);
+    session_destroy();
 }
 
 redirect('/');

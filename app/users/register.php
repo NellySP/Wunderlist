@@ -31,7 +31,21 @@ $statement->bindParam(':email', $email, PDO::PARAM_STR);
 $statement->execute();
 $checkEmail = $statement->fetch(PDO::FETCH_ASSOC);
 if ($checkEmail !== false) {
-    $_SESSION['errors'][] = "Seems like you already have an account!";
+    $_SESSION['errors'][] = "This email is already registered!";
+    redirect('/register.php');
+}
+// check if email and name is filled in
+if ($email === '') {
+    $_SESSION['errors'][] = 'Please fill in your email!';
+    redirect('/register.php');
+}
+if ($name === '') {
+    $_SESSION['errors'][] = 'Please fill in your username!';
+    redirect('/register.php');
+}
+//Check if password is given
+if ($_POST['password'] === '') {
+    $_SESSION['errors'][] = 'You must enter a password as well!';
     redirect('/register.php');
 } elseif ($checkEmail === false) {
 
