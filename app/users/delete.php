@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-if (isset($_GET['id'])) {
-    $user_id = $_SESSION['id'];
+if (isset($_GET['user_id'])) {
+    $user_id = $_SESSION['user_id'];
 
     //delete user
     $statement = $database->prepare("DELETE FROM users WHERE user_id = :user_id");

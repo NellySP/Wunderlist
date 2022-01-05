@@ -45,10 +45,10 @@ if (isset($_POST['email'], $_POST['password'])) {
         // Remember to not save the password in the session!
         unset($user['password']);
 
-        // Hur kopplar jag detta id till id i min databas?
+        // Hur kopplar jag detta id till id i min databas? varför funkar username och email men inte id??
 
         $_SESSION['user'] = [
-            "id" => $user['id'],
+            "user_id" => $user['user_id'],
             "name" => $user['username'],
             "email" => $user['email'],
         ];

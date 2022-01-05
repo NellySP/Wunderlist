@@ -7,6 +7,12 @@ require __DIR__ . '/views/header.php'; ?>
         $name = $_SESSION['user']['name'];
         echo 'Welcome, ' . $name . '!';
     } ?></h2>
+<h2><?php if (isset($_SESSION['user'])) {
+        $user_id = $_SESSION['user']['user_id'];
+        echo 'Welcome, ' . $user_id . '!';
+    } ?></h2>
+
+<!-- varför funkar name men inte user_id??? -->
 
 <img src="" alt="profile picture">
 <!-- form to change profile picture -->
