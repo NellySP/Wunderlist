@@ -26,7 +26,9 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="/register.php">Sign up</a>
+            <?php if (!isset($_SESSION['user'])) : ?>
+                <a class="nav-link" href="/register.php">Sign up</a>
+            <?php endif; ?>
         </li>
     </ul>
 </nav>
