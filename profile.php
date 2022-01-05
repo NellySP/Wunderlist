@@ -3,7 +3,10 @@
 require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php'; ?>
 
-<h2>Welcome ($fetchusernamefunctionmaybe)</h2>
+<h2><?php if (isset($_SESSION['user'])) {
+        $name = $_SESSION['user']['name'];
+        echo 'Welcome, ' . $name . '!';
+    } ?></h2>
 
 <img src="" alt="profile picture">
 <!-- form to change profile picture -->

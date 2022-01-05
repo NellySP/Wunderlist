@@ -25,4 +25,10 @@ require __DIR__ . '/views/header.php'; ?>
 
 <!-- Overview of all current lists -->
 
+<?php $statement = $database->prepare("SELECT * FROM lists");
+
+$statement->execute();
+
+$lists = $statement->fetchAll(PDO::FETCH_ASSOC); ?>
+
 <?php require __DIR__ . '/views/footer.php'; ?>

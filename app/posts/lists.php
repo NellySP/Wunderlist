@@ -22,5 +22,6 @@ if (isset($_POST['submit'])) {
         $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
 
         $statement->execute();
+        redirect('/lists.php');
     }
 }
