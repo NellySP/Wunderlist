@@ -6,13 +6,13 @@
 // fetch user_id from users where email like the one that is inloggad
 
 declare(strict_types=1);
+
 require __DIR__ . '/../autoload.php';
 
 if (isset($_POST['submit'])) {
     if (empty($_POST['title'])) {
         $_SESSION['errors'][] = "Give your list a name!";
     } else {
-
         $statement = $database->prepare('INSERT INTO Lists
             (user_id, title)
             VALUES
