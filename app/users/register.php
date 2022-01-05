@@ -31,7 +31,8 @@ $statement->bindParam(':email', $email, PDO::PARAM_STR);
 $statement->execute();
 $checkEmail = $statement->fetch(PDO::FETCH_ASSOC);
 if ($checkEmail !== false) {
-    echo "you already have an account!";
+    $_SESSION['errors'][] = "Seems like you already have an account!";
+    redirect('/register.php');
 } elseif ($checkEmail === false) {
 
     // insert new user in to db
@@ -51,5 +52,5 @@ if ($checkEmail !== false) {
 
     // redirect user to index page
 
-    header('Location: /login.php');
+    redirect('/login.php');
 }

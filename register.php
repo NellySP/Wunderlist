@@ -1,6 +1,15 @@
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
 
+<?php if (isset($_SESSION['errors'])) : ?>
+    <?php foreach ($_SESSION['errors'] as $error) : ?>
+        <div class="error">
+            <?php echo $error; ?>
+        </div>
+    <?php endforeach; ?>
+    <?php unset($_SESSION['errors']) ?>
+<?php endif; ?>
+
 <article class="registration-form">
     <h1>Registration</h1>
 
@@ -12,7 +21,8 @@
         <label for="password">Password</label>
         <input type="password" name="password" placeholder="Password">
         <input id="register-button" type="submit" name="submit" value="Register" class="login-button">
-        <!-- <p class="link"><a href="login.php">Click to Login</a></p> -->
+        <p>Already have an account?</p>
+        <p class="link"><a href="login.php">Click to Login</a></p>
     </form>
 
 </article>
