@@ -48,9 +48,7 @@ if ($_POST['password'] === '') {
     $_SESSION['errors'][] = 'You must enter a password as well!';
     redirect('/register.php');
 } elseif ($checkEmail === false) {
-
     // insert new user in to db
-
     $statement = $database->prepare('INSERT INTO Users
     (username, email, password)
     VALUES

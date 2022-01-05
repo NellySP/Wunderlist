@@ -6,7 +6,7 @@
             <a class="nav-link" href="/index.php">Home</a>
         </li>
 
-        <!-- show only if user is logged in, make function -->
+        <!-- profile and lists, show only if user is logged in-->
 
 
         <li class="nav-item">

@@ -12,4 +12,4 @@ function redirect(string $path)
 
 // function to delete user
 
-// fetch username and assign to variable 
+// fetch username and assign to variable
