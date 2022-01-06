@@ -14,8 +14,8 @@ require __DIR__ . '/views/header.php'; ?>
 
 <!-- form to change username-->
 <form action="/app/users/change-username.php" method="post">
-    <label for="password">Username</label>
-    <input class="form-control" type="password" name="password" id="password" required>
+    <label for="username">Username</label>
+    <input class="form-control" type="username" name="username" id="username" required>
     <small class="form-text">Enter your new username.</small>
     <button type="submit">Save changes</button>
 </form>
