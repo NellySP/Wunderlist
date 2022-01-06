@@ -13,7 +13,7 @@ require __DIR__ . '/views/header.php'; ?>
 <form action=""></form>
 
 <!-- form to change username-->
-<form action="/app/users/change-username.php">
+<form action="/app/users/change-username.php" method="post">
     <label for="password">Username</label>
     <input class="form-control" type="password" name="password" id="password" required>
     <small class="form-text">Enter your new username.</small>
@@ -21,7 +21,7 @@ require __DIR__ . '/views/header.php'; ?>
 </form>
 
 <!-- form to change email -->
-<form action="/app/users/change-email.php">
+<form action="/app/users/change-email.php" method="post">
     <label for="email">Email</label>
     <p>Your current email: <br><?= ($_SESSION['user']['email']); ?></p>
     <input class="form-control" type="email" name="email" id="email" placeholder="youremail@email.com" required>
@@ -38,7 +38,7 @@ require __DIR__ . '/views/header.php'; ?>
 <?php endif; ?>
 
 <!-- form to change password -->
-<form action="/app/users/change-password.php">
+<form action="/app/users/change-password.php" method="post">
     <label for="password">Password</label>
     <input class="form-control" type="password" name="password" id="password" required>
     <small class="form-text">Enter your new password.</small>
@@ -49,7 +49,7 @@ require __DIR__ . '/views/header.php'; ?>
 <p>Click here to delete your user profile</p>
 <small class="form-text">This can not be reversed!</small>
 
-<form action="/app/users/delete.php">
+<form action="/app/users/delete.php" method="post">
     <input type="hidden" name="userid-to-delete" value="<?php echo $_SESSION['user'] ?>">
     <button type="submit" name="delete" value="delete">Delete account</button>
 </form>
