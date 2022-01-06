@@ -8,6 +8,17 @@ require __DIR__ . '/views/header.php'; ?>
         echo 'Welcome, ' . $name . '!';
     } ?></h2>
 
+<!-- display error messages -->
+
+<?php if (isset($_SESSION['errors'])) : ?>
+    <?php foreach ($_SESSION['errors'] as $error) : ?>
+        <div class="messages">
+            <?php echo $error; ?>
+        </div>
+    <?php endforeach; ?>
+    <?php unset($_SESSION['errors']) ?>
+<?php endif; ?>
+
 <img src="" alt="profile picture">
 <!-- form to change profile picture -->
 <h2>Upload a profile picture!</h2>
@@ -25,6 +36,7 @@ require __DIR__ . '/views/header.php'; ?>
     <input class="form-control" type="username" name="username" id="username" required>
     <small class="form-text">Enter your new username.</small>
     <button type="submit">Save changes</button>
+
 </form>
 
 <!-- form to change email -->
@@ -35,14 +47,6 @@ require __DIR__ . '/views/header.php'; ?>
     <small class="form-text">Enter your new email adress.</small>
     <button type="submit">Save changes</button>
 </form>
-<?php if (isset($_SESSION['confirms'])) : ?>
-    <?php foreach ($_SESSION['confirms'] as $error) : ?>
-        <div class="messages">
-            <?php echo $confirm; ?>
-        </div>
-    <?php endforeach; ?>
-    <?php unset($_SESSION['confirms']) ?>
-<?php endif; ?>
 
 <!-- form to change password -->
 <form action="/app/users/change-password.php" method="post">

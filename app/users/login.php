@@ -33,10 +33,6 @@ if (isset($_POST['email'], $_POST['password'])) {
         redirect('/login.php');
     }
 
-    // if (!$user) {
-    //     redirect('/login.php');
-    // } ovan går även att skriva så här
-
     // if the user exist -> verify password
 
     if (password_verify($_POST['password'], $user['password'])) {
@@ -51,6 +47,7 @@ if (isset($_POST['email'], $_POST['password'])) {
             "user_id" => $user['user_id'],
             "name" => $user['username'],
             "email" => $user['email'],
+            "profile_picture" => $user['avatar']
         ];
     };
 }
