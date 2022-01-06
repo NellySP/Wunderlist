@@ -1,7 +1,8 @@
 <?php
 
 require __DIR__ . '/app/autoload.php';
-require __DIR__ . '/views/header.php'; ?>
+require __DIR__ . '/views/header.php';
+?>
 
 <h2><?php if (isset($_SESSION['user'])) {
         $name = $_SESSION['user']['name'];
@@ -19,8 +20,8 @@ require __DIR__ . '/views/header.php'; ?>
     <?php unset($_SESSION['errors']) ?>
 <?php endif; ?>
 
-<!-- user avatar -->
-<img src="<?= $_SESSION['user']['avatar']; ?>" alt=" profile picture">
+<!-- display user avatar -->
+<img src="uploads/<?= $_SESSION['user']['profile_picture']; ?>" alt="profile picture">
 <!-- form to change profile picture -->
 <h2>Upload a profile picture!</h2>
 <div>
