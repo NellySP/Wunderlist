@@ -10,7 +10,14 @@ require __DIR__ . '/views/header.php'; ?>
 
 <img src="" alt="profile picture">
 <!-- form to change profile picture -->
-<form action=""></form>
+<h2>Upload a profile picture!</h2>
+<div>
+    <form action="/app/users/profile-picture.php" method="post" enctype="multipart/form-data">
+        <label for="profile-picture">Choose a PNG image to upload</label>
+        <input type="file" name="profile-picture" id="profile-picture" accept=".jpg, .jpeg, .png" required>
+        <button type="submit">Upload image</button>
+    </form>
+</div>
 
 <!-- form to change username-->
 <form action="/app/users/change-username.php" method="post">
