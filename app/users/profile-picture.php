@@ -4,14 +4,6 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-// vad som ska göras: 
-// kolla om en bild satts i formuläret.
-// ge den rätt namn
-// kolla om bild uppfyller alla krav
-// kolla om bild finns i databas, om ja - update
-// om nej - insert. varför ska det vara så svårt????
-// bilden ska hamna i uploads-mappen. sökvägen i db?
-
 // check if image exists in form, if yes set a variable and specify filename
 
 if (isset($_FILES['avatar'])) {
@@ -32,7 +24,7 @@ if (isset($_FILES['avatar'])) {
     $statement->bindParam(':avatar', $avatarName, PDO::PARAM_STR);
     $statement->execute();
 
-    // $_SESSION['user']['avatar'] = $userAvatar;
+    $_SESSION['user']['avatar'] = $userAvatar;
 }
 
 redirect('/profile.php');

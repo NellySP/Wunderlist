@@ -19,7 +19,8 @@ require __DIR__ . '/views/header.php'; ?>
     <?php unset($_SESSION['errors']) ?>
 <?php endif; ?>
 
-<img src="" alt="profile picture">
+<!-- user avatar -->
+<img src="<?= $_SESSION['user']['avatar']; ?>" alt=" profile picture">
 <!-- form to change profile picture -->
 <h2>Upload a profile picture!</h2>
 <div>
