@@ -3,7 +3,7 @@
 
 <?php if (isset($_SESSION['errors'])) : ?>
     <?php foreach ($_SESSION['errors'] as $error) : ?>
-        <div class="error">
+        <div class="messages">
             <?php echo $error; ?>
         </div>
     <?php endforeach; ?>
