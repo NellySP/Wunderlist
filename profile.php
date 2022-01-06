@@ -12,13 +12,13 @@ require __DIR__ . '/views/header.php'; ?>
         echo 'Welcome, ' . $user_id . '!';
     } ?></h2>
 
-<!-- varför funkar name men inte user_id??? -->
 
 <img src="" alt="profile picture">
 <!-- form to change profile picture -->
 <form action=""></form>
 
 <!-- form to change email -->
+<p>Current email: <?= ($_SESSION['user']['email']); ?></p>
 <form action=""></form>
 
 <!-- form to change password -->
@@ -26,9 +26,10 @@ require __DIR__ . '/views/header.php'; ?>
 
 <!-- delete user -->
 <form action="/app/users/delete.php">
-    <input type="hidden" name="userid-to-delete" value="<?php echo $userId ?>">
+    <input type="hidden" name="userid-to-delete" value="<?php echo $_SESSION['user'] ?>">
     <input type="submit" name="delete" value="delete">
 </form>
 <p>Click here to delete your user profile</p>
+
 
 <?php require __DIR__ . '/views/footer.php'; ?>
