@@ -4,6 +4,19 @@
 <article>
     <h1>Login</h1>
 
+    <!-- system messages -->
+
+    <?php if (isset($_SESSION['errors'])) : ?>
+        <?php foreach ($_SESSION['errors'] as $error) : ?>
+            <div class="messages">
+                <?php echo $error; ?>
+            </div>
+        <?php endforeach; ?>
+        <?php unset($_SESSION['errors']) ?>
+    <?php endif; ?>
+
+    <!-- inlog form -->
+
     <form action="app/users/login.php" method="post">
         <div class="mb-3">
             <label for="email">Email</label>

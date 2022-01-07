@@ -14,4 +14,6 @@ if (isset($_GET['user_id'])) {
 
     unset($_SESSION['user']);
 }
-redirect('/');
+redirect('/index.php');
+
+// funkar direkt i sql, så varför inte här???

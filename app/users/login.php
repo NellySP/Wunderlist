@@ -10,7 +10,7 @@ require __DIR__ . '/../autoload.php';
 if (isset($_POST['email'], $_POST['password'])) {
     // We start by fetching the values from the $_POST array and save them to
     // their own variables.
-    $email = trim($_POST['email']);
+    $email = trim(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
 
 
     $query = 'SELECT * FROM users WHERE email = :email';
@@ -41,8 +41,6 @@ if (isset($_POST['email'], $_POST['password'])) {
         // Remember to not save the password in the session!
         unset($user['password']);
 
-        // Hur kopplar jag detta id till id i min databas? varför funkar username och email men inte id??
-
         $_SESSION['user'] = [
             "user_id" => $user['user_id'],
             "name" => $user['username'],
@@ -50,6 +48,9 @@ if (isset($_POST['email'], $_POST['password'])) {
             "profile_picture" => $user['profile_picture']
         ];
     };
+    if (!password_verify($_POST['password'], $user['password'])) {
+        redirect('/login.php');
+    }
 }
 
 redirect('/profile.php');

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-// Fatal error: Uncaught PDOException: SQLSTATE[HY000]: General error: 25 column index out of range in /Users/nellypetren/Documents/GitHub/Wunderlist/app/users/change-password.php:16 Stack trace: #0 /Users/nellypetren/Documents/GitHub/Wunderlist/app/users/change-password.php(16): PDOStatement->execute() #1 {main} thrown in /Users/nellypetren/Documents/GitHub/Wunderlist/app/users/change-password.php on line 16
+// change user password
 
 if (isset($_POST['password'])) {
     $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
