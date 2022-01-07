@@ -15,8 +15,10 @@ if (isset($_POST['list'])) {
     if (empty($_POST['title'])) {
         $_SESSION['errors'][] = "Give your list a name!";
     }
-    $statement = $database->prepare('INSERT INTO Lists (user_id, title) VALUES (:user_id, :title');
-
+    $statement = $database->prepare('INSERT INTO Lists
+    (user_id, title)
+    VALUES
+    (:user_id, :title)');
     $statement->bindParam(':title', $title, PDO::PARAM_STR);
     $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
 
