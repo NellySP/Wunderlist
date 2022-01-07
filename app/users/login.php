@@ -39,7 +39,6 @@ if (isset($_POST['email'], $_POST['password'])) {
         // If the password was valid we know that the user exists and provided
         // the correct password. We can now save the user in our session.
         // Remember to not save the password in the session!
-        unset($user['password']);
 
         $_SESSION['user'] = [
             "user_id" => $user['user_id'],
@@ -48,9 +47,13 @@ if (isset($_POST['email'], $_POST['password'])) {
             "profile_picture" => $user['profile_picture']
         ];
     };
+
+    // if the password is not correct, send error message
+
     if (!password_verify($_POST['password'], $user['password'])) {
+        $_SESSION['errors'][] = 'Password or email is incorrect. Please try again!';
         redirect('/login.php');
     }
+    unset($user['password']);
+    redirect('/profile.php');
 }
-
-redirect('/profile.php');

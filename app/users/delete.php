@@ -4,16 +4,35 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-if (isset($_GET['user_id'])) {
+if (isset($_POST['user_id'])) {
     $user_id = $_SESSION['user']['user_id'];
 
-    //delete user
-    $statement = $database->prepare("DELETE FROM Users WHERE user_id = :user_id");
-    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $email = trim(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
+
+
+    $query = 'SELECT * FROM users WHERE email = :email';
+
+    $statement = $database->prepare($query);
+
+    $statement->bindParam(':email', $email, PDO::PARAM_STR);
+
     $statement->execute();
 
-    unset($_SESSION['user']);
-}
-redirect('/index.php');
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-// funkar direkt i sql, så varför inte här???
+    if (password_verify($_POST['password'], $user['password'])) {
+
+        //delete user
+        $statement = $database->prepare("DELETE FROM Users WHERE user_id = :user_id");
+        $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $statement->execute();
+
+        unset($_SESSION['user']);
+    } else {
+        $_SESSION['errors'][] = 'Password or email is incorrect. Please try again!';
+        redirect('/profile.php');
+    }
+};
+
+
+redirect('/');

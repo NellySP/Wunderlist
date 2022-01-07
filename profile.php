@@ -63,9 +63,21 @@ require __DIR__ . '/views/header.php';
 <small class="form-text">This can not be reversed!</small>
 
 <form action="/app/users/delete.php" method="post">
-    <input type="hidden" name="userid-to-delete" value="<?php echo $_SESSION['user'] ?>">
+    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user']['user_id'] ?>">
+    <div class="mb-3">
+        <label for="email">Email</label>
+        <input class="form-control" type="email" name="email" id="email" placeholder="email" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="password">Password</label>
+        <input class="form-control" type="password" name="password" id="password" required>
+    </div>
+
     <button type="submit" name="delete" value="delete">Delete account</button>
 </form>
+
+
 
 
 <?php require __DIR__ . '/views/footer.php'; ?>

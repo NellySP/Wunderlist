@@ -11,7 +11,5 @@ unset($_SESSION['user']);
 // Destroy session
 if (session_destroy()) {
     // Redirecting To Home Page
-    header("Location: login.php");
+    redirect('/');
 }
-
-// redirect('/');
