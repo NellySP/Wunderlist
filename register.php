@@ -3,7 +3,6 @@
 
 <?= display_error() ?>
 
-
 <article class="registration-form">
     <h1>Registration</h1>
 

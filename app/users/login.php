@@ -8,7 +8,7 @@ require __DIR__ . '/../autoload.php';
 // In this file we login users.
 
 if (isset($_POST['email'], $_POST['password'])) {
-    // We start by fetching the values from the $_POST array and save them to
+    // start by fetching the values from the $_POST array and save them to
     // their own variables.
     $email = trim(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
 

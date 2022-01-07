@@ -3,6 +3,18 @@
 require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php'; ?>
 
+<!-- display error messages -->
+
+<?= display_error() ?>
+
+<!-- display user avatar -->
+<img src="/uploads/<?= get_profile_picture() ?>" alt="profile picture">
+
+<h2><?php if (isset($_SESSION['user'])) {
+        $name = $_SESSION['user']['name'];
+        echo 'Welcome, ' . $name . '!';
+    } ?></h2>
+
 <!-- create new list -->
 
 <form method="post" action="posts/lists.php" class="input_form">
