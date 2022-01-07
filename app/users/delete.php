@@ -32,7 +32,6 @@ if (isset($_POST['user_id'])) {
         $_SESSION['errors'][] = 'Password or email is incorrect. Please try again!';
         redirect('/profile.php');
     }
+    redirect('/');
+    $_SESSION['errors'][] = 'Your account has been deleted!';
 };
-
-
-redirect('/');

@@ -6,14 +6,8 @@
 
     <!-- system messages -->
 
-    <?php if (isset($_SESSION['errors'])) : ?>
-        <?php foreach ($_SESSION['errors'] as $error) : ?>
-            <div class="messages">
-                <?php echo $error; ?>
-            </div>
-        <?php endforeach; ?>
-        <?php unset($_SESSION['errors']) ?>
-    <?php endif; ?>
+    <?= display_error() ?>
+
 
     <!-- inlog form -->
 

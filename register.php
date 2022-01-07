@@ -1,14 +1,8 @@
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
 
-<?php if (isset($_SESSION['errors'])) : ?>
-    <?php foreach ($_SESSION['errors'] as $error) : ?>
-        <div class="messages">
-            <?php echo $error; ?>
-        </div>
-    <?php endforeach; ?>
-    <?php unset($_SESSION['errors']) ?>
-<?php endif; ?>
+<?= display_error() ?>
+
 
 <article class="registration-form">
     <h1>Registration</h1>

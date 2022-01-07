@@ -11,14 +11,7 @@ require __DIR__ . '/views/header.php';
 
 <!-- display error messages -->
 
-<?php if (isset($_SESSION['errors'])) : ?>
-    <?php foreach ($_SESSION['errors'] as $error) : ?>
-        <div class="messages">
-            <?php echo $error; ?>
-        </div>
-    <?php endforeach; ?>
-    <?php unset($_SESSION['errors']) ?>
-<?php endif; ?>
+<?= display_error() ?>
 
 <!-- display user avatar -->
 <img src="/uploads/<?= get_profile_picture() ?>" alt="profile picture">

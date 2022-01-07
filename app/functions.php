@@ -20,4 +20,17 @@ function get_profile_picture()
     }
 }
 
+// function for display of error-messages
+
+function display_error()
+{
+    if (isset($_SESSION['errors'])) {
+        foreach ($_SESSION['errors'] as $error) {
+            unset($_SESSION['errors']);
+            return $error;
+        }
+        unset($_SESSION['errors']);
+    }
+}
+
 // Function to return user to homepage if logout is activated
