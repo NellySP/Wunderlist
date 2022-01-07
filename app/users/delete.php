@@ -21,7 +21,6 @@ if (isset($_POST['user_id'])) {
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
     if (password_verify($_POST['password'], $user['password'])) {
-
         //delete user
         $statement = $database->prepare("DELETE FROM Users WHERE user_id = :user_id");
         $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
