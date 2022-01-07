@@ -26,10 +26,12 @@ if (isset($_POST['user_id'])) {
         $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $statement->execute();
 
+        // delete users lists from database
         $statement = $database->prepare("DELETE FROM Lists WHERE user_id = :user_id");
         $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $statement->execute();
 
+        // delete users tasks from database
         $statement = $database->prepare("DELETE FROM Tasks WHERE user_id = :user_id");
         $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $statement->execute();
