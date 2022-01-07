@@ -15,16 +15,18 @@ require __DIR__ . '/views/header.php'; ?>
         echo 'Welcome, ' . $name . '!';
     } ?></h2>
 
+<p>Prepare to get organized! Below you'll find all of your lists and tasks!</p>
+
 <!-- create new list -->
 
-<form method="post" action="posts/lists.php" class="input_form">
+<form method="post" action="app/posts/lists.php" class="input_form">
     <input type="text" name="list" class="list_input">
     <button type="submit" name="submit" class="add_btn">Create list</button>
 </form>
 
 <!-- within the list, create new task -->
 
-<form method="post" action="posts/tasks.php" class="input_form">
+<form method="post" action="app/posts/tasks.php" class="input_form">
     <input type="text" name="task" class="task_input">
     <button type="submit" name="submit" class="add_btn">Add Task</button>
 </form>
