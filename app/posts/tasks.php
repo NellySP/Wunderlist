@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 // In this file we add lists to the database
 
-// hur placerar jag task under list?
+require __DIR__ . '/../autoload.php';
 
-declare(strict_types=1);
+// hur placerar jag task under list?
 
 // Create task
 
@@ -15,7 +17,7 @@ if (isset($_POST['task'])) {
     if (empty($_POST['title'])) {
         $_SESSION['errors'][] = "Give your list a name!";
     }
-    $statement = $database->prepare('INSERT INTO Lists
+    $statement = $database->prepare('INSERT INTO Tasks
     (user_id, list_id, title)
     VALUES
     (:user_id, :list_id, :title)');
