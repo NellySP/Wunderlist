@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-// Change username! 
-// fungerar i databasen men inte när jag ekar ut namnet högst upp i profilen?? Jo det funkar! men endast efter utlog + inlog!
+// In this file we change username!
 
 if (isset($_POST['username'])) {
     $email = trim($_POST['username']);

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
+// in this file we upload and replace user profile picture
+
 // check if image exists in form, if yes set a variable and specify filename
 
 if (isset($_FILES['avatar'])) {
