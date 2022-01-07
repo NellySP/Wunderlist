@@ -12,7 +12,7 @@ if (isset($_POST['password'])) {
 
     $statement = $database->prepare('UPDATE Users SET password = :password WHERE user_id = :user_id');
 
-    $statement->bindParam(':id', $user_id, PDO::PARAM_INT);
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
     $statement->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
 
     $statement->execute();
