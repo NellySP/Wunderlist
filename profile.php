@@ -20,8 +20,8 @@ require __DIR__ . '/views/header.php';
     <?php unset($_SESSION['errors']) ?>
 <?php endif; ?>
 
-<!-- display user avatar, men varför funkar det inteeeeeeeee -->
-<img src="/uploads/<?= $_SESSION['user']['profile_picture'] ?>" alt="profile picture">
+<!-- display user avatar -->
+<img src="/uploads/<?= get_profile_picture() ?>" alt="profile picture">
 <!-- form to change profile picture -->
 <h2>Upload a profile picture!</h2>
 <div>
