@@ -55,7 +55,7 @@ require __DIR__ . '/views/header.php';
 <p>Fill out the form below to delete your account</p>
 <small class="form-text">This can not be reversed!</small>
 
-<form action="/app/users/delete.php" method="post">
+<form action="/app/users/delete-user.php" method="post">
     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user']['user_id'] ?>">
     <div class="mb-3">
         <label for="email">Email</label>
