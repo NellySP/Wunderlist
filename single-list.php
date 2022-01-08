@@ -1,5 +1,7 @@
 <?php
 
+// This page will show up when you click a single list
+
 require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php'; ?>
 

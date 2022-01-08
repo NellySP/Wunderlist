@@ -31,11 +31,13 @@ require __DIR__ . '/views/header.php'; ?>
     <p><?php echo $errors; ?></p>
 <?php } ?>
 
-<!-- Overview of all current lists -->
+<!-- Overview of all existing lists -->
 
 <?php foreach (get_lists($_SESSION['user']['user_id'], $database) as $list) : ?>
 
     <h3><?= ($list['title']); ?></h3>
 <?php endforeach; ?>
+
+<!-- add buttons to delete lists -->
 
 <?php require __DIR__ . '/views/footer.php'; ?>
