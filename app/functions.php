@@ -37,10 +37,18 @@ function display_error()
 
 // Function to fetch users list  
 
-function get_lists($id, $database)
+function get_lists($user_id, $database)
 {
     $statement = $database->query('SELECT * FROM lists WHERE user_id = :user_id;');
-    $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->execute();
+    $lists = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $lists;
+}
+function get_tasks($list_id, $database)
+{
+    $statement = $database->query('SELECT * FROM Tasks WHERE list_id = :list_id;');
+    $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
     $statement->execute();
     $lists = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $lists;

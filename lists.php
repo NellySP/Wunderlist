@@ -38,7 +38,7 @@ require __DIR__ . '/views/header.php'; ?>
     <p><?php echo $errors; ?></p>
 <?php } ?>
 
-<!-- Overview of all current lists, spara i variabel och eka ut? blir det en array kanske? ja det borde det bli. -->
+<!-- Overview of all current lists -->
 
 <?php foreach (get_lists($_SESSION['user']['user_id'], $database) as $list) : ?>
 
