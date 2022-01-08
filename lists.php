@@ -40,17 +40,9 @@ require __DIR__ . '/views/header.php'; ?>
 
 <!-- Overview of all current lists, spara i variabel och eka ut? blir det en array kanske? ja det borde det bli. -->
 
+<?php foreach (get_lists($_SESSION['user']['user_id'], $database) as $list) : ?>
 
-<?php
-foreach (fetch_lists($_SESSION['user']['user_id'], $database) as $list) : ?>
-    <div class="list-container">
-        <form action="list.php" method="GET">
-            <div class="list">
-                <input type="hidden" name="list-page" id="list-page" value="<?= $list['id'] ?>">
-                <input type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
-                <button type="submit" class="button-list"><?= $list['title'] ?></button>
-            </div>
-    </div>
+    <h3><?= ($list['title']); ?></h3>
 <?php endforeach; ?>
 
 <?php require __DIR__ . '/views/footer.php'; ?>

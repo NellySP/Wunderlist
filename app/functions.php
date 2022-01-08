@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/../autoload.php';
-
 function redirect(string $path)
 {
     header("Location: ${path}");
@@ -39,11 +37,11 @@ function display_error()
 
 // Function to fetch users list  
 
-function fetch_lists()
+function get_lists($id, $database)
 {
-    $user_id =  $_SESSION['user']['user_id'];
-
-    $statement = $database->prepare("DELETE FROM Lists WHERE user_id = :user_id");
-    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement = $database->query('SELECT * FROM lists WHERE user_id = :user_id;');
+    $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
     $statement->execute();
+    $lists = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $lists;
 }
