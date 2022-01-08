@@ -22,7 +22,7 @@ require __DIR__ . '/views/header.php'; ?>
 
 <form method="post" action="app/posts/lists.php" class="input_form">
     <input type="text" name="list" id="list" class="list_input">
-    <button type="submit" name="submit" class="add_btn">Create list</button>
+    <button type="submit" name="submit" class="add_btn">Create new list</button>
 </form>
 
 <!-- within the list, create new task -->
@@ -40,10 +40,17 @@ require __DIR__ . '/views/header.php'; ?>
 
 <!-- Overview of all current lists, spara i variabel och eka ut? blir det en array kanske? ja det borde det bli. -->
 
-<?php $statement = $database->prepare("SELECT * FROM lists");
 
-$statement->execute();
-
-$lists = $statement->fetchAll(PDO::FETCH_ASSOC); ?>
+<?php
+foreach (fetch_lists($_SESSION['user']['user_id'], $database) as $list) : ?>
+    <div class="list-container">
+        <form action="list.php" method="GET">
+            <div class="list">
+                <input type="hidden" name="list-page" id="list-page" value="<?= $list['id'] ?>">
+                <input type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
+                <button type="submit" class="button-list"><?= $list['title'] ?></button>
+            </div>
+    </div>
+<?php endforeach; ?>
 
 <?php require __DIR__ . '/views/footer.php'; ?>

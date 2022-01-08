@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require __DIR__ . '/../autoload.php';
+
 function redirect(string $path)
 {
     header("Location: ${path}");
@@ -34,3 +36,14 @@ function display_error()
 }
 
 // Function to return user to homepage if logout is activated
+
+// Function to fetch users list  
+
+function fetch_lists()
+{
+    $user_id =  $_SESSION['user']['user_id'];
+
+    $statement = $database->prepare("DELETE FROM Lists WHERE user_id = :user_id");
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->execute();
+}
