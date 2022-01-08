@@ -13,7 +13,7 @@ require __DIR__ . '/views/header.php'; ?>
 
 <!-- within the list, create tasks -->
 
-<form method="post" action="app/posts/tasks.php" class="input_form">
+<form method="post" action="app/posts/create-task.php" class="input_form">
     <input type="text" name="task" id="task" class="task_input">
     <button type="submit" name="submit" class="add_btn">Add Task</button>
 </form>

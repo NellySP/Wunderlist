@@ -14,8 +14,8 @@ if (isset($_POST['task'])) {
     $task = trim(filter_var($_POST['task'], FILTER_SANITIZE_STRING));
     $user_id = $_SESSION['user']['user_id'];
 
-    if (empty($_POST['title'])) {
-        $_SESSION['errors'][] = "Give your list a name!";
+    if (empty($_POST['task'])) {
+        $_SESSION['errors'][] = "Name your task!";
     }
     $statement = $database->prepare('INSERT INTO Tasks
     (user_id, list_id, title)

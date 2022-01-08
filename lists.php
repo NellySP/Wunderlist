@@ -20,7 +20,7 @@ require __DIR__ . '/views/header.php'; ?>
 
 <!-- create new list -->
 
-<form method="post" action="app/posts/lists.php" class="input_form">
+<form method="post" action="app/posts/create-list.php" class="input_form">
     <input type="text" name="list" id="list" class="list_input">
     <button type="submit" name="submit" class="add_btn">Create new list</button>
 </form>
