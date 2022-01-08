@@ -45,6 +45,8 @@ function get_lists($user_id, $database)
     $lists = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $lists;
 }
+// Function to fetch users tasks
+
 function get_tasks($list_id, $database)
 {
     $statement = $database->query('SELECT * FROM Tasks WHERE list_id = :list_id;');
