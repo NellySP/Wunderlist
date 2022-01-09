@@ -40,16 +40,17 @@ require __DIR__ . '/views/header.php'; ?>
                 <form action="single-list.php" method="GET">
                     <div class="list">
                         <input type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
+                        <!-- this one only to show that i actually have the list-id and am not about to gaslight mahself -->
                         <button type="submit" class=""><?= $list['id'] ?></button>
                         <input type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
                         <button type="submit" class=""><?= $list['title'] ?></button>
                     </div>
                 </form>
                 <form action="/app/posts/update-list.php" method="post">
+                    <!-- make this hidden? show when pressing a + button maybe. javascript and eventlisteners. hidden div and such -->
                     <div>
                         <label for="title">Rename list</label>
                         <input type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
-                        <button type="submit" class=""><?= $list['id'] ?></button>
                         <input class="form-control" type="text" name="title" id="title" placeholder="enter new title" required>
                     </div>
                     <button type="submit" class="button-main">Update</button>
