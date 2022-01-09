@@ -10,13 +10,12 @@ require __DIR__ . '/../autoload.php';
 
 if (isset($_POST['title'])) {
     $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_STRING));
-    $userId = $_SESSION['user']['id'];
-    $listId = ($_POST['list-id']);
+    $list_id = ($_POST['list-id']);
 
     $statement = $database->prepare('UPDATE lists SET title = :title WHERE id = :id');
 
     $statement->bindParam(':title', $title, PDO::PARAM_STR);
-    $statement->bindParam(':id', $list['id'], PDO::PARAM_INT);
+    $statement->bindParam(':id', $list_id, PDO::PARAM_INT);
 
     $statement->execute();
 };

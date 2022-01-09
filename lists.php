@@ -47,8 +47,9 @@ require __DIR__ . '/views/header.php'; ?>
                 </form>
                 <form action="/app/posts/update-list.php" method="post">
                     <div>
-                        <label for="title">Rename the list</label>
+                        <label for="title">Rename list</label>
                         <input type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
+                        <button type="submit" class=""><?= $list['id'] ?></button>
                         <input class="form-control" type="text" name="title" id="title" placeholder="enter new title" required>
                     </div>
                     <button type="submit" class="button-main">Update</button>
