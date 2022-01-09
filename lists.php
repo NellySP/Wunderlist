@@ -46,7 +46,7 @@ require __DIR__ . '/views/header.php'; ?>
                         <button type="submit" class=""><?= $list['title'] ?></button>
                     </div>
                 </form>
-                <button class="show-button">+</button>
+                <button id="show-button">+</button>
                 <!-- make this hidden? show when pressing a + button maybe. javascript and eventlisteners. hidden div and such -->
                 <div class="hidden-update-field">
                     <form action="/app/posts/update-list.php" method="post">
