@@ -37,8 +37,8 @@ require __DIR__ . '/views/header.php'; ?>
 
     <h3><?= ($list['title']); ?></h3>
     <form action="/app/posts/delete-list.php" method="post">
-        <input type="hidden" name="delete-list" id="delete-list" value="<?= $list['id'] ?>">
-        <button type="submit" class="button-delete">X</button>
+        <input type="hidden" name="list" id="list" value="<?= $list['id'] ?>">
+        <button type="submit" class="delete">X</button>
     </form>
 <?php endforeach; ?>
 
