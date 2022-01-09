@@ -37,7 +37,13 @@ require __DIR__ . '/views/header.php'; ?>
     <div class="list-view">
         <ul>
             <li>
-                <h3><?= ($list['title']); ?></h3>
+                <form action="single-list.php" method="GET">
+                    <div class="list">
+                        <input type="hidden" name="list-page" id="list-page" value="<?= $list['id'] ?>">
+                        <input type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
+                        <button type="submit" class="button-list"><?= $list['title'] ?></button>
+                    </div>
+                </form>
                 <form action="/app/posts/delete-list.php" method="post">
                     <input type="hidden" name="list" id="list" value="<?= $list['id'] ?>">
                     <button type="submit" class="delete">X</button>
