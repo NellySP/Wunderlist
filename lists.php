@@ -37,7 +37,7 @@ require __DIR__ . '/views/header.php'; ?>
 
     <h3><?= ($list['title']); ?></h3>
     <td class="delete">
-        <a href="/app/posts/delete-list.php=<?= $title ?>">x</a>
+        <a href="/app/posts/delete-list.php=<?= $list['id'] ?>">x</a>
     </td>
 <?php endforeach; ?>
 
