@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-// In this file we delete new posts in the database.
 
 if (isset($_POST['task'])) {
-    $title = trim(filter_var($_POST['task'], FILTER_SANITIZE_STRING));
+    $list_id = $_POST['task'];
 
-    $statement = $database->prepare('DELETE * FROM Taskss WHERE title = :title');
-    $statement->bindParam(':title', $title, PDO::PARAM_STR);
+    $statement = $database->prepare('DELETE FROM Tasks WHERE list_id = :List_id');
+    $statement->bindParam(':id', $id, PDO::PARAM_STR);
     $statement->execute();
 }
+
 redirect('/lists.php');

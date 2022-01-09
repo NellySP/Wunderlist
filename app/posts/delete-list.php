@@ -14,11 +14,9 @@ if (isset($_POST['list'])) {
 
     // Delete tasks from within list
 
-    $statement = $database->prepare('DELETE FROM tasks WHERE list_id = :list_id;');
+    $statement = $database->prepare('DELETE FROM Tasks WHERE list_id = :list_id;');
     $statement->bindParam(':list_id', $id, PDO::PARAM_INT);
     $statement->execute();
 }
 
-
-// lägg till att ta bort alla tasks med list_id 
 redirect('/lists.php');
