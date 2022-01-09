@@ -53,3 +53,7 @@ function get_tasks($list_id, $database)
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $tasks;
 }
+
+// function to view all tasks
+
+// function to view all tasks due today

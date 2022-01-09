@@ -8,4 +8,11 @@
 <p>Welcome to Wunderlist!</p>
 <p>The place where you can create task lists and get yourself organized!</p>
 
+om inloggad
+
+visa profilbild, välkommen namn, dölj ovan,
+visa alla tasks due today.
+
+alternativ för att visa alla tasks?
+
 <?php require __DIR__ . '/views/footer.php';

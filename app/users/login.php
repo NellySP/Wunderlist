@@ -55,5 +55,5 @@ if (isset($_POST['email'], $_POST['password'])) {
         redirect('/login.php');
     }
     unset($user['password']);
-    redirect('/profile.php');
+    redirect('/index.php');
 }
