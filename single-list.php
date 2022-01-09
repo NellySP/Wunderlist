@@ -23,12 +23,14 @@ require __DIR__ . '/views/header.php'; ?>
     </div>
     <div>
         <label for="description">Description</label>
-        <input class="form-control" type="text" name="description" id="description" placeholder="description">
+        <input class="form-control" type="text" name="description" id="description" placeholder="description of task">
     </div>
     <div>
         <label for="deadline">Deadline</label>
         <input class="form-control" type="date" name="deadline" id="deadline">
     </div>
+    <label for="completed"></label>
+    <input type="checkbox" name="checkbox" id="checkbox" class="form-control">
     <button type="submit" name="submit" class="add_btn">Add Task</button>
 </form>
 
