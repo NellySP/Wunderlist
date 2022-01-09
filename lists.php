@@ -34,14 +34,15 @@ require __DIR__ . '/views/header.php'; ?>
 <!-- Overview of all existing lists -->
 
 <?php foreach (get_lists($_SESSION['user']['user_id'], $database) as $list) : ?>
-
-    <h3><?= ($list['title']); ?></h3>
+    <ul>
+        <li>
+            <h3><?= ($list['title']); ?></h3>
+        </li>
+    </ul>
     <form action="/app/posts/delete-list.php" method="post">
         <input type="hidden" name="list" id="list" value="<?= $list['id'] ?>">
         <button type="submit" class="delete">X</button>
     </form>
 <?php endforeach; ?>
-
-<!-- add buttons to delete lists -->
 
 <?php require __DIR__ . '/views/footer.php'; ?>
