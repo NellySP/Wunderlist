@@ -12,7 +12,7 @@ require __DIR__ . '/views/header.php'; ?>
         echo 'Welcome, ' . $name . '!';
     } ?></h2>
 
-<p>Prepare to get organized! Below you'll find all of your lists and tasks!</p>
+<p>Prepare to get organized! Below you'll find all of your lists! Create a list and click on it to add tasks!</p>
 
 <!-- display error messages -->
 

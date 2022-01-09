@@ -19,7 +19,7 @@ require __DIR__ . '/views/header.php';
 <h2>Upload a profile picture!</h2>
 <div>
     <form action="/app/users/profile-picture.php" method="post" enctype="multipart/form-data">
-        <label for="avatar">Choose a picture to upload</label>
+        <label for="avatar">Choose a picture to upload for the first time or to update your avatar!</label>
         <input type="file" name="avatar" id="avatar" accept=".jpg, .jpeg" required>
         <button type="submit">Upload image</button>
     </form>

@@ -16,4 +16,6 @@ if (isset($_POST['list'])) {
     $statement->bindParam(':title', $title, PDO::PARAM_STR);
     $statement->execute();
 }
+
+// lägg till att ta bort alla tasks med list_id 
 redirect('/lists.php');
