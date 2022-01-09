@@ -6,22 +6,18 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-// Create list
+// Update list
 
-if (isset($_POST['list'])) {
-    $title = trim(filter_var($_POST['list'], FILTER_SANITIZE_STRING));
-    $user_id = $_SESSION['user']['user_id'];
+if (isset($_POST['title'])) {
+    $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_STRING));
+    $userId = $_SESSION['user']['id'];
+    $listId = ($_POST['list-id']);
 
-    if (empty($_POST['title'])) {
-        $_SESSION['errors'][] = "Give your list a name!";
-    }
-    $statement = $database->prepare('INSERT INTO Lists
-    (user_id, title)
-    VALUES
-    (:user_id, :title)');
+    $statement = $database->prepare('UPDATE lists SET title = :title WHERE id = :id');
+
     $statement->bindParam(':title', $title, PDO::PARAM_STR);
-    $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+    $statement->bindParam(':id', $list['id'], PDO::PARAM_INT);
 
     $statement->execute();
-}
+};
 redirect('/lists.php');

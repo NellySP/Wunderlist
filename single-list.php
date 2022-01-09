@@ -12,7 +12,7 @@ require __DIR__ . '/views/header.php'; ?>
 <?php } ?>
 
 <!-- Display the name of the single chosen list, how tho, do i get it -->
-
+<h2>Listnamn (när jag får tag på det)</h2>
 
 <!-- within the list, create tasks -->
 
@@ -29,14 +29,19 @@ require __DIR__ . '/views/header.php'; ?>
         <label for="deadline">Deadline</label>
         <input class="form-control" type="date" name="deadline" id="deadline">
     </div>
-    <label for="completed"></label>
-    <input type="checkbox" name="checkbox" id="checkbox" class="form-control">
     <button type="submit" name="submit" class="add_btn">Add Task</button>
 </form>
 
 <!-- Display all tasks -->
+
+<h3>Här visas alla tasks när jag får tag på dem</h3>
+
 <?php foreach (get_tasks($_SESSION['user']['user_id'], $database) as $task) : ?>
     <h3><?= ($task['title']); ?></h3>
+    <form action="completedtaskellernåt" method="POST">
+        <label for="completed"></label>
+        <input type="checkbox" name="checkbox" id="checkbox" class="form-control">
+    </form>
     <form action="/app/posts/delete-task.php" method="post">
         <input type="hidden" name="task" id="task" value="<?= $task['id'] ?>">
         <button type="submit" class="delete">X</button>
