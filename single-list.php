@@ -11,6 +11,8 @@ require __DIR__ . '/views/header.php'; ?>
     <p><?php echo $errors; ?></p>
 <?php } ?>
 
+<!-- Display the name of the single chosen list, how tho, do i get it -->
+
 <!-- within the list, create tasks -->
 
 <form method="post" action="app/posts/create-task.php" class="input_form">

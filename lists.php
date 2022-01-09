@@ -36,6 +36,9 @@ require __DIR__ . '/views/header.php'; ?>
 <?php foreach (get_lists($_SESSION['user']['user_id'], $database) as $list) : ?>
 
     <h3><?= ($list['title']); ?></h3>
+    <td class="delete">
+        <a href="/app/posts/delete-list.php=<?= $title ?>">x</a>
+    </td>
 <?php endforeach; ?>
 
 <!-- add buttons to delete lists -->

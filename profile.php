@@ -52,7 +52,7 @@ require __DIR__ . '/views/header.php';
 </form>
 
 <!-- delete user -->
-<p>Fill out the form below to delete your account</p>
+<p>Enter your username and password below to delete your account</p>
 <small class="form-text">This can not be reversed!</small>
 
 <form action="/app/users/delete-user.php" method="post">
