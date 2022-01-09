@@ -12,3 +12,5 @@ function display() {
 showButton.addEventListener('click', function (e) {
   display();
 });
+
+// funkar bara på första knappen. måste jag använda någon slags for-loop?
