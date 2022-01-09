@@ -36,9 +36,10 @@ require __DIR__ . '/views/header.php'; ?>
 <?php foreach (get_lists($_SESSION['user']['user_id'], $database) as $list) : ?>
 
     <h3><?= ($list['title']); ?></h3>
-    <td class="delete">
-        <a href="/app/posts/delete-list.php=<?= $list['id'] ?>">x</a>
-    </td>
+    <form action="/app/posts/delete-list.php" method="post">
+        <input type="hidden" name="delete-list" id="delete-list" value="<?= $list['id'] ?>">
+        <button type="submit" class="button-delete">X</button>
+    </form>
 <?php endforeach; ?>
 
 <!-- add buttons to delete lists -->
