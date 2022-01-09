@@ -21,9 +21,7 @@ require __DIR__ . '/views/header.php'; ?>
 </form>
 
 <!-- Display all tasks -->
-
 <?php foreach (get_tasks($_SESSION['user']['user_id'], $database) as $task) : ?>
-
     <h3><?= ($task['title']); ?></h3>
     <form action="/app/posts/delete-task.php" method="post">
         <input type="hidden" name="task" id="task" value="<?= $list['id'] ?>">

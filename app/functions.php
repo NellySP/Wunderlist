@@ -35,7 +35,7 @@ function display_error()
 
 // Function to return user to homepage if logout is activated
 
-// Function to fetch users list  
+// Function to fetch users list
 
 function get_lists($user_id, $database)
 {

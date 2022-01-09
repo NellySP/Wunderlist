@@ -17,3 +17,7 @@ img {
   width: 200px;
   height: 200px;
 }
+
+.list-view {
+  display: block;
+}
