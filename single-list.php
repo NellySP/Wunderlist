@@ -17,7 +17,18 @@ require __DIR__ . '/views/header.php'; ?>
 <!-- within the list, create tasks -->
 
 <form method="post" action="app/posts/create-task.php" class="input_form">
-    <input type="text" name="task" id="task" class="task_input">
+    <div>
+        <label for="task">Title</label>
+        <input class="form-control" type="text" name="task" id="task" placeholder="task">
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <input class="form-control" type="text" name="description" id="description" placeholder="description">
+    </div>
+    <div>
+        <label for="deadline">Deadline</label>
+        <input class="form-control" type="date" name="deadline" id="deadline">
+    </div>
     <button type="submit" name="submit" class="add_btn">Add Task</button>
 </form>
 
