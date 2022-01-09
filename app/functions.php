@@ -48,8 +48,8 @@ function get_lists($user_id, $database)
 function get_tasks($list_id, $database)
 {
     $statement = $database->query('SELECT * FROM Tasks WHERE list_id = :list_id;');
-    $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
+    $statement->bindParam(':list_id', $_GET['list-id'], PDO::PARAM_INT);
     $statement->execute();
-    $lists = $statement->fetchAll(PDO::FETCH_ASSOC);
-    return $lists;
+    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $tasks;
 }

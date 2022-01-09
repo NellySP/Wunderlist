@@ -13,6 +13,7 @@ require __DIR__ . '/views/header.php'; ?>
 
 <!-- Display the name of the single chosen list, how tho, do i get it -->
 
+
 <!-- within the list, create tasks -->
 
 <form method="post" action="app/posts/create-task.php" class="input_form">
@@ -24,7 +25,7 @@ require __DIR__ . '/views/header.php'; ?>
 <?php foreach (get_tasks($_SESSION['user']['user_id'], $database) as $task) : ?>
     <h3><?= ($task['title']); ?></h3>
     <form action="/app/posts/delete-task.php" method="post">
-        <input type="hidden" name="task" id="task" value="<?= $list['id'] ?>">
+        <input type="hidden" name="task" id="task" value="<?= $task['id'] ?>">
         <button type="submit" class="delete">X</button>
     </form>
 <?php endforeach; ?>
