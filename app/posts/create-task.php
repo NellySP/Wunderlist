@@ -2,20 +2,18 @@
 
 declare(strict_types=1);
 
-// In this file we add lists to the database
+// In this file we add tasks to list and the database
 
 require __DIR__ . '/../autoload.php';
-
-// hur placerar jag task under list?????
 
 // Create task
 
 if (isset($_POST['task'])) {
     $task = trim($_POST['task']);
-    $description = ($_POST['task-description']);
-    $deadline = ($_POST['task-deadline']);
-    $completed = ($_POST['task-completed']);
-    $list_id = ($_GET['list_id']);
+    $description = ($_POST['description']);
+    $deadline = ($_POST['deadline']);
+    $completed = ($_POST['completed']);
+    $list_id = ($_POST['list-id']);
     $user_id = $_SESSION['user']['user_id'];
 
 
@@ -35,5 +33,5 @@ if (isset($_POST['task'])) {
 
 
     $statement->execute();
+    redirect("/single-list.php?list-id=$list_id");
 }
-redirect("/single-list.php?list-id=$list_id");

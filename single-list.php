@@ -11,8 +11,8 @@ require __DIR__ . '/views/header.php'; ?>
     <p><?php echo $errors; ?></p>
 <?php } ?>
 
-<!-- Display the name of the single chosen list, how tho, do i get it -->
-<h1><?= $_GET['list-name']; ?></h1>
+<!-- Display the name of the current list -->
+<h1><?= $list_name; ?></h1>
 
 <!-- within the list, create tasks -->
 
@@ -37,7 +37,7 @@ require __DIR__ . '/views/header.php'; ?>
 
 <h3>Här visas alla tasks när jag får tag på dem</h3>
 
-<?php foreach (get_tasks($_SESSION['user']['user_id'], $database) as $task) : ?>
+<?php foreach (get_tasks($database, $_GET['list-id']) as $task) : ?>
     <h3><?= ($task['title']); ?></h3>
     <form action="completedtaskellernåt" method="POST">
         <label for="completed"></label>

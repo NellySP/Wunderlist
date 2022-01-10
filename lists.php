@@ -21,8 +21,8 @@ require __DIR__ . '/views/header.php'; ?>
 <!-- create new list -->
 
 <form method="post" action="app/posts/create-list.php" class="input_form">
-    <input type="text" name="list" id="list" class="list_input">
-    <button type="submit" name="submit" class="add_btn">Create new list</button>
+    <input class="form-control" type="text" name="list" id="list" class="list_input">
+    <button class="form-control" type="submit" name="submit" class="add_btn">Create new list</button>
 </form>
 
 <!-- Error message -->
@@ -37,13 +37,11 @@ require __DIR__ . '/views/header.php'; ?>
     <div class="list-view">
         <ul>
             <li>
-                <form action="single-list.php" method="GET">
-                    <div class="list">
-                        <input type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
-                        <!-- this one only to show that i actually have the list-id and am not about to gaslight mahself -->
-                        <button type="submit" class=""><?= $list['id'] ?></button>
-                        <input type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
-                        <button type="submit" class=""><?= $list['title'] ?></button>
+                <form action="single-list.php" method="GET" class="input-form">
+                    <div>
+                        <input class="form-control" type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
+                        <input class="form-control" type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
+                        <button class="form-control" type="submit" class=""><?= $list['title'] ?></button>
                     </div>
                 </form>
                 <button id="show-button">+</button>

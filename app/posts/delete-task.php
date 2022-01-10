@@ -13,4 +13,4 @@ if (isset($_POST['task'])) {
     $statement->execute();
 }
 
-redirect('/lists.php');
+redirect("/single-list.php?list-id=$list_id");
