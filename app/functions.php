@@ -85,9 +85,25 @@ function get_all_tasks(PDO $database)
 
 // function to view all tasks due today
 
+function tasks_due_today(PDO $database)
+{
+    $user_id = $_SESSION['user']['user_id'];
+    $deadline = date('Y-m-d');
+
+    $statement = $database->prepare("SELECT * FROM Tasks WHERE user_id = :user_id AND deadline = :deadline");
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->bindParam(':deadline', $deadline, PDO::PARAM_STR);
+
+    $statement->execute();
+
+    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    return $tasks;
+}
+
 // function to get list-name from list-id and user_id
 
-function get_list_name($list_id, $database)
+function get_list_name(PDO $database)
 {
     $user_id = $_SESSION['user']['user_id'];
     if (isset($_GET['list_id'])) {
@@ -95,7 +111,7 @@ function get_list_name($list_id, $database)
         $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
         $statement->execute();
-        $list_name = $statement->fetchAll(PDO::FETCH_ASSOC);
-        return $list_name;
+        $list = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $list;
     }
 }

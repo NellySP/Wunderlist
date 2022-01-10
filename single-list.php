@@ -12,7 +12,7 @@ require __DIR__ . '/views/header.php'; ?>
 <?php } ?>
 
 <!-- Display the name of the current list -->
-<h1><?= $list_name; ?></h1>
+<h1><?= get_list_name($database); ?></h1>
 
 <!-- within the list, create tasks -->
 
@@ -35,13 +35,17 @@ require __DIR__ . '/views/header.php'; ?>
 
 <!-- Display all tasks -->
 
-<h3>Här visas alla tasks när jag får tag på dem</h3>
+<h3>Your tasks</h3>
 
 <?php foreach (get_tasks($database, $_GET['list-id']) as $task) : ?>
-    <h3><?= ($task['title']); ?></h3>
+    <ul>
+        <li>
+            <h3><?= ($task['title']); ?></h3>
+        </li>
+    </ul>
     <form action="completedtaskellernåt" method="POST">
         <label for="completed"></label>
-        <input type="checkbox" name="checkbox" id="checkbox" class="form-control">
+        <input type="checkbox" name="checkbox" id="checkbox">
     </form>
     <form action="/app/posts/delete-task.php" method="post">
         <input type="hidden" name="task" id="task" value="<?= $task['id'] ?>">
