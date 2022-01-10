@@ -12,5 +12,4 @@ if (isset($_POST['task'])) {
     $statement->bindParam(':id', $id, PDO::PARAM_STR);
     $statement->execute();
 }
-
 redirect("/single-list.php?list-id=$list_id");

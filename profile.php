@@ -4,19 +4,13 @@ require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php';
 ?>
 
-<h2><?php if (isset($_SESSION['user'])) {
-        $name = $_SESSION['user']['name'];
-        echo 'Welcome, ' . $name . '!';
-    } ?></h2>
-
 <!-- display error messages -->
 
 <?= display_error() ?>
 
 <!-- display user avatar -->
 <img src="/uploads/<?= get_profile_picture() ?>" alt="profile picture">
-<!-- form to change profile picture -->
-<h2>Upload a profile picture!</h2>
+<!-- form to upload and change profile picture -->
 <div>
     <form action="/app/users/profile-picture.php" method="post" enctype="multipart/form-data">
         <label for="avatar">Choose a picture to upload for the first time or to update your avatar!</label>

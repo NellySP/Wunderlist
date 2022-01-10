@@ -11,9 +11,7 @@
 <?php endif; ?>
 
 <?php if (isset($_SESSION['user'])) : ?>
-
     <!-- display user avatar -->
-
     <h2><?php if (isset($_SESSION['user'])) {
             $name = $_SESSION['user']['name'];
             echo 'Welcome, ' . $name . '!';
