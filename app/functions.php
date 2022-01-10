@@ -15,7 +15,7 @@ function get_profile_picture()
     $profile_picture = $_SESSION['user']['profile_picture'];
     if ($profile_picture === null) {
         return '/default.jpg';
-    } elseif ($profile_picture !== null) {
+    } else {
         return $profile_picture;
     }
 }
@@ -44,15 +44,6 @@ function get_lists($user_id, $database)
     return $lists;
 }
 // Function to fetch users tasks
-
-// function get_tasks($list_id, $database)
-// {
-//     $statement = $database->query('SELECT * FROM Tasks WHERE list_id = :list_id;');
-//     $statement->bindParam(':list_id', $_GET['list-id'], PDO::PARAM_INT);
-//     $statement->execute();
-//     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
-//     return $tasks;
-// }
 
 function get_tasks(PDO $database, $list_id)
 {

@@ -4,15 +4,8 @@ require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php'; ?>
 
 
-<!-- display user avatar -->
-<img src="/uploads/<?= get_profile_picture() ?>" alt="profile picture">
-
-<h2><?php if (isset($_SESSION['user'])) {
-        $name = $_SESSION['user']['name'];
-        echo 'Welcome, ' . $name . '!';
-    } ?></h2>
-
-<p>Prepare to get organized! Below you'll find all of your lists! Create a list and click on it to add tasks!</p>
+<h2>Prepare to get organized! </h2>
+<p>Below you'll find all of your lists! Create a list and click on it to add tasks!</p>
 
 <!-- display error messages -->
 
