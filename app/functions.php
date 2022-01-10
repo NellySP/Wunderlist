@@ -45,15 +45,42 @@ function get_lists($user_id, $database)
 }
 // Function to fetch users tasks
 
-function get_tasks($list_id, $database)
+// function get_tasks($list_id, $database)
+// {
+//     $statement = $database->query('SELECT * FROM Tasks WHERE list_id = :list_id;');
+//     $statement->bindParam(':list_id', $_GET['list-id'], PDO::PARAM_INT);
+//     $statement->execute();
+//     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+//     return $tasks;
+// }
+
+function get_tasks(PDO $database, $list_id)
 {
-    $statement = $database->query('SELECT * FROM Tasks WHERE list_id = :list_id;');
-    $statement->bindParam(':list_id', $_GET['list-id'], PDO::PARAM_INT);
+    $user_id = $_SESSION['user']['id'];
+
+    $statement = $database->prepare("SELECT * FROM tasks WHERE user_id = :user_id AND list_id = :list_id");
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
     $statement->execute();
+
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+
     return $tasks;
 }
 
 // function to view all tasks
+
+function get_all_tasks(PDO $database)
+{
+    $user_id = $_SESSION['user']['user_id'];
+
+    $statement = $database->prepare("SELECT * FROM Tasks WHERE user_id = :user_id");
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->execute();
+
+    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    return $tasks;
+}
 
 // function to view all tasks due today

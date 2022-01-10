@@ -12,11 +12,12 @@ require __DIR__ . '/views/header.php'; ?>
 <?php } ?>
 
 <!-- Display the name of the single chosen list, how tho, do i get it -->
-<h2>Listnamn (när jag får tag på det)</h2>
+<h1><?= $_GET['list-name']; ?></h1>
 
 <!-- within the list, create tasks -->
 
 <form method="post" action="app/posts/create-task.php" class="input_form">
+    <input type="hidden" name="list-id" value="<?= htmlspecialchars($_GET['list-id']) ?>">
     <div>
         <label for="task">Title</label>
         <input class="form-control" type="text" name="task" id="task" placeholder="task">

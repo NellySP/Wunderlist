@@ -11,13 +11,12 @@ require __DIR__ . '/../autoload.php';
 // Create task
 
 if (isset($_POST['task'])) {
-    $task = trim(filter_var($_POST['task'], FILTER_SANITIZE_STRING));
+    $task = trim($_POST['task']);
     $description = ($_POST['task-description']);
     $deadline = ($_POST['task-deadline']);
     $completed = ($_POST['task-completed']);
     $list_id = ($_GET['list_id']);
-    // ballar ur totalt när jag försöker lägga till user_id. då funkar det inte att lägga till alls?
-    // $user_id = $_SESSION['user']['user_id'];
+    $user_id = $_SESSION['user']['user_id'];
 
 
 
@@ -28,13 +27,13 @@ if (isset($_POST['task'])) {
     VALUES 
     (:user_id, :title, :description, :deadline, :completed, :list_id)');
     $statement->bindParam(':title', $task, PDO::PARAM_STR);
-    $statement->bindParam(':list_id', $list_id, PDO::PARAM_STR);
+    $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
     $statement->bindParam(':description', $description, PDO::PARAM_STR);
     $statement->bindParam(':deadline', $deadline, PDO::PARAM_STR);
     $statement->bindParam(':completed', $completed, PDO::PARAM_STR);
-    // $user_id->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 
 
     $statement->execute();
 }
-redirect('/single-list.php');
+redirect("/single-list.php?list-id=$list_id");
