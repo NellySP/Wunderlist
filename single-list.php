@@ -61,8 +61,10 @@ foreach ($lists as $list) : ?>
         </li>
     </ul>
     <form action="/app/posts/task-status.php" method="POST">
-        <label for="completed"></label>
+        <input type="hidden" name="id" value="<?php $task['id'] ?>">
+        <label for="checkbox"><?php $isCompleted ?></label>
         <input type="checkbox" name="checkbox" id="checkbox">
+        <button type="submit">Submit</button>
     </form>
 <?php endforeach; ?>
 

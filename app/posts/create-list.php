@@ -30,6 +30,7 @@ back();
 // Vill ha det såhär. funkar i tasks men inte häå¨r?
 // om input är empty ska den inte skapa en list. det funkar.
 // men sen skapar den ändå inte en lista fastän jag sätter namn? DET ÄR SKUMT
+// funkar tydligen inte i tasks heller
 
 // if ($_POST['list'] === '') {
 //     $_SESSION['errors'][] = "Give your list a name!";
