@@ -1,9 +1,10 @@
 <?php
 
-// In this file we update tasks
-
 declare(strict_types=1);
+
 require __DIR__ . '/../autoload.php';
+
+// In this file we update tasks
 
 $task_id = $_GET['task-id'];
 $list_id = $_GET['list-id'];

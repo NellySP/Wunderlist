@@ -63,7 +63,6 @@ foreach ($lists as $list) : ?>
 <h3>Edit tasks</h3>
 
 <?php foreach (get_tasks($database, $_GET['list-id']) as $task) : ?>
-
     <form action="single-list.php" method="GET" class="input-form">
         <div>
             <input class="form-control" type="hidden" name="task-id" id="task-id" value="<?= $list['id'] ?>">
@@ -97,5 +96,4 @@ foreach ($lists as $list) : ?>
         </form>
 
     <?php endforeach; ?>
-
     <?php require __DIR__ . '/views/footer.php'; ?>

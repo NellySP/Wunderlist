@@ -89,7 +89,6 @@ function tasks_due_today(PDO $database)
 
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
     if (isset($tasks)) {
-
         return $tasks;
     } else {
         echo 'You have no tasks due today!';
