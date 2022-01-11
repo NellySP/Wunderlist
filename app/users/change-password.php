@@ -16,5 +16,6 @@ if (isset($_POST['password'])) {
     $statement->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
 
     $statement->execute();
-    redirect('/profile.php');
 }
+
+back();

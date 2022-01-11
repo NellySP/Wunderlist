@@ -60,6 +60,4 @@ if (isset($_POST['deadline'])) {
     $statement->execute();
 }
 
-
-
 back();

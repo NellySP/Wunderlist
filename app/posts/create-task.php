@@ -33,5 +33,6 @@ if (isset($_POST['task'])) {
 
 
     $statement->execute();
-    back();
 }
+
+back();

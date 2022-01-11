@@ -18,4 +18,4 @@ if (isset($_POST['email'])) {
     $statement->execute();
 };
 
-redirect('/profile.php');
+back();

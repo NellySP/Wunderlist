@@ -27,4 +27,4 @@ if (isset($_FILES['avatar'])) {
     $statement->execute();
 }
 
-redirect('/profile.php');
+back();

@@ -12,3 +12,4 @@ $id = ($_POST['task-id']);
 
 // if lådan är icheckad (true)
 // if else (false)
+back();

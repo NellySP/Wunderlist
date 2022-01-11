@@ -16,5 +16,6 @@ if (isset($_POST['username'])) {
     $statement->bindParam(':username', $email, PDO::PARAM_STR);
 
     $statement->execute();
-    redirect('/profile.php');
-};
+}
+
+back();

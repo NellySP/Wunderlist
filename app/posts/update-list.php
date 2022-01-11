@@ -18,5 +18,6 @@ if (isset($_POST['title'])) {
     $statement->bindParam(':id', $list_id, PDO::PARAM_INT);
 
     $statement->execute();
-    back();
-};
+}
+
+back();
