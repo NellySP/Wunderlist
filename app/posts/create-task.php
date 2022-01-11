@@ -33,5 +33,5 @@ if (isset($_POST['task'])) {
 
 
     $statement->execute();
-    redirect("/single-list.php?list-id=$list_id&list-name=$list_name");
+    back();
 }

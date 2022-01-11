@@ -38,20 +38,6 @@ require __DIR__ . '/views/header.php'; ?>
                         <button class="form-control" type="submit" class=""><?= $list['title'] ?></button>
                     </div>
                 </form>
-                <button id="show-button">+</button>
-                <!-- make this hidden? show when pressing a + button maybe. javascript and eventlisteners. hidden div and such -->
-                <div class="hidden-update-field">
-                    <form action="/app/posts/update-list.php" method="post">
-                        <label for="title">Rename list</label>
-                        <input type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
-                        <input class="form-control" type="text" name="title" id="title" placeholder="enter new title" required>
-                        <button type="submit" class="button-main">Update</button>
-                </div>
-                </form>
-                <form action="/app/posts/delete-list.php" method="post">
-                    <input type="hidden" name="list" id="list" value="<?= $list['id'] ?>">
-                    <button type="submit" class="delete">Delete list</button>
-                </form>
             </li>
         </ul>
     </div>

@@ -95,4 +95,19 @@ foreach ($lists as $list) : ?>
     </form>
 <?php endforeach; ?>
 
+<h3>Edit List</h3>
+
+<div class="hidden-update-field">
+    <form action="/app/posts/update-list.php" method="post">
+        <label for="title">Rename list</label>
+        <input type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
+        <input class="form-control" type="text" name="title" id="title" placeholder="enter new title" required>
+        <button type="submit" class="button-main">Update</button>
+</div>
+</form>
+<form action="/app/posts/delete-list.php" method="post">
+    <input type="hidden" name="list" id="list" value="<?= $list['id'] ?>">
+    <button type="submit" class="delete">Delete list</button>
+</form>
+
 <?php require __DIR__ . '/views/footer.php'; ?>
