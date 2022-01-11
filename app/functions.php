@@ -108,14 +108,3 @@ function get_single_list(PDO $database, $id)
     $list = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $list;
 }
-
-function getList($list_id, $database)
-{
-    $user_id = $_SESSION['user']['user_id'];
-    $statement = $database->query('SELECT * FROM lists WHERE user_id = :user_id AND id = :id;');
-    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-    $statement->bindParam(':id', $list_id, PDO::PARAM_INT);
-    $statement->execute();
-    $list = $statement->fetch(PDO::FETCH_ASSOC);
-    return $list;
-}

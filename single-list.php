@@ -50,6 +50,7 @@ foreach ($lists as $list) : ?>
     <ul>
         <li>
             <h3><?= ($task['title']); ?></h3>
+            <h3><?= ($task['id']); ?></h3>
         </li>
     </ul>
     <form action="completedtaskellernåt" method="POST">
@@ -65,11 +66,12 @@ foreach ($lists as $list) : ?>
 <?php foreach (get_tasks($database, $_GET['list-id']) as $task) : ?>
     <form action="single-list.php" method="GET" class="input-form">
         <div>
-            <input class="form-control" type="hidden" name="task-id" id="task-id" value="<?= $list['id'] ?>">
-            <input class="form-control" type="hidden" name="task-name" id="task-name" value="<?= $list['title'] ?>">
+            <input class="form-control" type="hidden" name="task-id" id="task-id" value="<?= $task['id'] ?>">
+            <input class="form-control" type="hidden" name="task-name" id="task-name" value="<?= $task['title'] ?>">
             <ul>
                 <li>
                     <h3><?= ($task['title']); ?></h3>
+                    <h3><?= ($task['id']); ?></h3>
                 </li>
             </ul>
         </div>
