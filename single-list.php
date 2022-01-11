@@ -12,7 +12,7 @@ require __DIR__ . '/views/header.php'; ?>
 <?php } ?>
 
 <!-- Display the name of the current list -->
-<h1><?= get_list_name($database); ?></h1>
+<h1><?= get_list_name($database, $_GET['list-id']); ?></h1>
 
 <!-- within the list, create tasks -->
 
