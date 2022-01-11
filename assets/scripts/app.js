@@ -1,16 +1,7 @@
-// show hidden update field
+// submit checkbox-form
 
-// VARFÖR FUNGERAR DET INTE NÄR JAG KÖR MED GETELEMENTBYCLASSNAME??? DET ÄR LÖJLIGT VARFÖR MÅSTE JAG ANVÄNDA ID
+const form = document.querySelector('form');
+const task = document.querySelector('input[type=checkbox]');
 
-// const showButton = document.getElementById('show-button');
-
-// function display() {
-//   const hiddenUpdate = document.querySelector('.hidden-update-field');
-//   hiddenUpdate.classList.toggle('open-update-field');
-// }
-
-// showButton.addEventListener('click', function (e) {
-//   display();
-// });
-
-// funkar bara på första knappen. måste jag använda någon slags for-loop?
+// When the user clicks on the checkbox the form will automagically submit.
+task.addEventListener('click', () => form.submit());
