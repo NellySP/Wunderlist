@@ -16,14 +16,13 @@ if (isset($_POST['task'])) {
     $deadline = ($_POST['deadline']);
 
 
-    $statement = $database->prepare('UPDATE Tasks SET title = :title, description = :description, deadline = :deadline WHERE id = :task_id');
+    $statement = $database->prepare('UPDATE Tasks SET title = :title, description = :description, deadline = :deadline WHERE id = :id');
 
-    $statement->bindParam(':task_id', $task_id, PDO::PARAM_INT);
+    $statement->bindParam(':id', $task_id, PDO::PARAM_INT);
     $statement->bindParam(':title', $title, PDO::PARAM_STR);
     $statement->bindParam(':description', $description, PDO::PARAM_STR);
     $statement->bindParam(':deadline', $deadline, PDO::PARAM_STR);
 
     $statement->execute();
+    redirect("/single-list.php?list-id=$list_id&list-name=$list_name");
 }
-
-redirect('/single_list.php?id=' . $list_id);
