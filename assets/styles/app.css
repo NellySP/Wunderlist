@@ -19,9 +19,9 @@ img {
 }
 
 .hidden-update-field {
-  display: none;
-}
-
-.open-update-field {
   display: block;
 }
+
+/* .open-update-field {
+  display: block;
+} */

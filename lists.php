@@ -18,6 +18,7 @@ require __DIR__ . '/views/header.php'; ?>
     <button class="form-control" type="submit" name="submit" class="add_btn">Create new list</button>
 </form>
 
+
 <!-- Error message -->
 
 <?php if (isset($errors)) { ?>
@@ -49,7 +50,7 @@ require __DIR__ . '/views/header.php'; ?>
                 </form>
                 <form action="/app/posts/delete-list.php" method="post">
                     <input type="hidden" name="list" id="list" value="<?= $list['id'] ?>">
-                    <button type="submit" class="delete">X</button>
+                    <button type="submit" class="delete">Delete list</button>
                 </form>
             </li>
         </ul>

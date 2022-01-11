@@ -88,8 +88,12 @@ function tasks_due_today(PDO $database)
     $statement->execute();
 
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+    if (isset($tasks)) {
 
-    return $tasks;
+        return $tasks;
+    } else {
+        echo 'You have no tasks due today!';
+    }
 }
 
 // function to get list-name from list-id and user_id
