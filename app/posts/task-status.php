@@ -7,13 +7,11 @@ require __DIR__ . '/../autoload.php';
 // In this file we update tasks completed status
 
 $user_id = $_SESSION['user']['user_id'];
-
-
 $isCompleted = isset($_POST['checkbox']);
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
-    $completed = TRUE;
+    $completed = 'completed';
 
     if ($isCompleted) {
         echo "The task $id is completed.";
@@ -27,6 +25,5 @@ if (isset($_POST['id'])) {
     $statement->bindParam(':comleted', $completed, PDO::PARAM_STR);
     $statement->bindParam(':id', $id, PDO::PARAM_INT);
     $statement->execute();
+    back();
 }
-
-back();
