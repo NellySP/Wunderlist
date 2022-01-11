@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-$task_id = $_GET['task_id'];
-$list_id = $_GET['list_id'];
-$user_id = $_SESSION['user']['user_id'];
+$list_id = $_GET['list-id'];
 
 
 if (isset($_POST['task'])) {

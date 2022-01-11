@@ -9,7 +9,7 @@ require __DIR__ . '/../autoload.php';
 // Update list
 
 if (isset($_POST['title'])) {
-    $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_STRING));
+    $title = trim($_POST['title']);
     $list_id = ($_POST['list-id']);
 
     $statement = $database->prepare('UPDATE lists SET title = :title WHERE id = :id');

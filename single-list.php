@@ -89,7 +89,6 @@ foreach ($lists as $list) : ?>
             </div>
             <button type="submit" name="submit" class="add_btn">Update Task</button>
         </form>
-
         <form action="/app/posts/delete-task.php" method="post">
             <input type="hidden" name="task" id="task" value="<?= $task['id'] ?>">
             <button type="submit" class="delete">Delete task</button>
