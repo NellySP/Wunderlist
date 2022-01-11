@@ -51,6 +51,8 @@ foreach ($lists as $list) : ?>
         <li>
             <h3><?= ($task['title']); ?></h3>
             <p><?= ($task['description']); ?></p>
+            <p>Due:<?= ($task['deadline']); ?></p>
+
 
         </li>
     </ul>
@@ -71,6 +73,7 @@ foreach ($lists as $list) : ?>
             <li>
                 <h3><?= ($task['title']); ?></h3>
                 <p><?= ($task['description']); ?></p>
+                <p>Due:<?= ($task['deadline']); ?></p>
             </li>
         </ul>
     </div>
