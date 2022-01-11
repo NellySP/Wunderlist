@@ -108,3 +108,10 @@ function get_single_list(PDO $database, $id)
     $list = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $list;
 }
+
+// redirect back to the page where the form was posted
+
+function back()
+{
+    redirect($_SERVER['HTTP_REFERER']);
+}

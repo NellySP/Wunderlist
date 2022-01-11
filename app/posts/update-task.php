@@ -24,5 +24,6 @@ if (isset($_POST['task'])) {
     $statement->bindParam(':deadline', $deadline, PDO::PARAM_STR);
 
     $statement->execute();
-    redirect("/single-list.php?list-id=$list_id&list-name=$list_name");
+
+    back();
 }
