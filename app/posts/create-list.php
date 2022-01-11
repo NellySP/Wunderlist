@@ -26,3 +26,28 @@ if (isset($_POST['list'])) {
 }
 
 back();
+
+// Vill ha det såhär. funkar i tasks men inte häå¨r? 
+// om input är empty ska den inte skapa en list. det funkar.
+// men sen skapar den ändå inte en lista fastän jag sätter namn? DET ÄR SKUMT
+
+// if ($_POST['list'] === '') {
+//     $_SESSION['errors'][] = "Give your list a name!";
+
+
+//     if (isset($_POST['list'])) {
+//         $title = trim($_POST['list']);
+//         $user_id = $_SESSION['user']['user_id'];
+
+//         $statement = $database->prepare('INSERT INTO Lists
+//     (user_id, title)
+//     VALUES
+//     (:user_id, :title)');
+//         $statement->bindParam(':title', $title, PDO::PARAM_STR);
+//         $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+
+//         $statement->execute();
+//     }
+// }
+
+// redirect('/lists.php');
