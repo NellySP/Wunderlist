@@ -27,7 +27,7 @@ if (isset($_POST['list'])) {
 
 back();
 
-// Vill ha det såhär. funkar i tasks men inte häå¨r? 
+// Vill ha det såhär. funkar i tasks men inte häå¨r?
 // om input är empty ska den inte skapa en list. det funkar.
 // men sen skapar den ändå inte en lista fastän jag sätter namn? DET ÄR SKUMT
 
