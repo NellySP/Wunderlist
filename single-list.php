@@ -23,6 +23,10 @@ foreach ($lists as $list) : ?>
     <p><?php echo $errors; ?></p>
 <?php } ?>
 
+<!-- display error messages -->
+
+<?= display_error() ?>
+
 <!-- within the list, create tasks -->
 
 <form method="post" action="app/posts/create-task.php" class="input_form">

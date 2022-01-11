@@ -18,13 +18,6 @@ require __DIR__ . '/views/header.php'; ?>
     <button class="form-control" type="submit" name="submit" class="add_btn">Create new list</button>
 </form>
 
-
-<!-- Error message -->
-
-<?php if (isset($errors)) { ?>
-    <p><?php echo $errors; ?></p>
-<?php } ?>
-
 <!-- Overview of all existing lists -->
 
 <?php foreach (get_lists($_SESSION['user']['user_id'], $database) as $list) : ?>

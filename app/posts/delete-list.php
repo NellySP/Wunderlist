@@ -19,4 +19,4 @@ if (isset($_POST['list'])) {
     $statement->execute();
 }
 
-back();
+redirect('/lists.php');
