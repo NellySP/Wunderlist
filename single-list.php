@@ -94,6 +94,6 @@ foreach ($lists as $list) : ?>
             <input type="hidden" name="task" id="task" value="<?= $task['id'] ?>">
             <button type="submit" class="delete">Delete task</button>
         </form>
-
     <?php endforeach; ?>
+
     <?php require __DIR__ . '/views/footer.php'; ?>

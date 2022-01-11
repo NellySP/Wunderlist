@@ -118,4 +118,4 @@ function getList($list_id, $database)
     $statement->execute();
     $list = $statement->fetch(PDO::FETCH_ASSOC);
     return $list;
-};
+}
