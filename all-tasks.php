@@ -5,15 +5,17 @@
 
 <?= display_error() ?>
 
-<h2>Look at all of your tasks!</h2>
+<h2>Look at all those tasks!</h2>
 
 <?php foreach (get_all_tasks($database) as $task) : ?>
     <ul>
         <li>
             <h3><?= ($task['title']); ?></h3>
+            <p><?= ($task['description']); ?></p>
+            <p>Due:<?= ($task['deadline']); ?></p>
         </li>
     </ul>
-    <form action="completedtaskellernåt" method="POST">
+    <form action="/app/posts/task-status.php" method="POST">
         <label for="completed"></label>
         <input type="checkbox" name="checkbox" id="checkbox">
     </form>

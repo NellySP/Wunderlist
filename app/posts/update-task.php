@@ -9,6 +9,7 @@ require __DIR__ . '/../autoload.php';
 $list_id = $_POST['list-id'];
 $user_id = $_SESSION['user']['user_id'];
 $id = ($_POST['task-id']);
+$title = $_POST['title'];
 
 // check if title is set, if yes -> set variable
 
@@ -39,33 +40,34 @@ if ($title) {
     $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
     $statement->bindParam(':id', $id, PDO::PARAM_INT);
     $statement->execute();
+}
 
-    if ($description) {
-        $statement = $database->prepare(
-            'UPDATE Tasks
+if ($description) {
+    $statement = $database->prepare(
+        'UPDATE Tasks
     SET description = :description
-    WHERE user_id = :user_id AND list_id = :list_id AND id = :task_id'
-        );
+    WHERE user_id = :user_id AND list_id = :list_id AND id = :id'
+    );
 
-        $statement->bindParam(':description', $description, PDO::PARAM_STR);
-        $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-        $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
-        $statement->execute();
-    }
+    $statement->bindParam(':description', $description, PDO::PARAM_STR);
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
+    $statement->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+}
 
-    if ($deadline) {
-        $statement = $database->prepare(
-            'UPDATE Tasks
+if ($deadline) {
+    $statement = $database->prepare(
+        'UPDATE Tasks
     SET deadline = :deadline
     WHERE user_id = :user_id AND list_id = :list_id AND id = :id'
-        );
+    );
 
-        $statement->bindParam(':deadline', $deadline, PDO::PARAM_STR);
-        $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-        $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
-        $statement->execute();
-    }
+    $statement->bindParam(':deadline', $deadline, PDO::PARAM_STR);
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
+    $statement->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
 }
+
 back();
