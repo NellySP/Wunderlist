@@ -50,9 +50,11 @@ foreach ($lists as $list) : ?>
     <ul>
         <li>
             <h3><?= ($task['title']); ?></h3>
+            <p><?= ($task['description']); ?></p>
+
         </li>
     </ul>
-    <form action="completedtaskellernåt" method="POST">
+    <form action="/app/posts/task-status.php" method="POST">
         <label for="completed"></label>
         <input type="checkbox" name="checkbox" id="checkbox">
     </form>
@@ -68,6 +70,7 @@ foreach ($lists as $list) : ?>
         <ul>
             <li>
                 <h3><?= ($task['title']); ?></h3>
+                <p><?= ($task['description']); ?></p>
             </li>
         </ul>
     </div>
@@ -84,7 +87,7 @@ foreach ($lists as $list) : ?>
             <input class="form-control" type="text" name="description" id="description" placeholder="enter new description">
         </div>
         <div>
-            <label for="deadline">Deadline</label>
+            <label for="deadline">Update deadline</label>
             <input class="form-control" type="date" name="deadline" id="deadline">
         </div>
         <button type="submit" name="submit" class="add_btn">Update Task</button>
