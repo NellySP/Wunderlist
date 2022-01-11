@@ -115,3 +115,5 @@ function back()
 {
     redirect($_SERVER['HTTP_REFERER']);
 }
+
+// check if task is completed
