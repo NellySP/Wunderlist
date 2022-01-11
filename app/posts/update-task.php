@@ -19,7 +19,7 @@ if (isset($_POST['task'])) {
 
 // description
 
-if (isset($_POST['desciption'])) {
+if (isset($_POST['description'])) {
     $description = trim($_POST['description']);
 }
 // deadline
