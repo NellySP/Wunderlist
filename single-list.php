@@ -11,8 +11,7 @@ require __DIR__ . '/views/header.php'; ?>
     <p><?php echo $errors; ?></p>
 <?php } ?>
 
-<!-- Display the name of the current list -->
-<h1><?= get_list_name($database, $_GET['list-id']); ?></h1>
+<h2><?= $_GET['list-name']; ?></h2>
 
 <!-- within the list, create tasks -->
 
