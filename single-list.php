@@ -5,13 +5,23 @@
 require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php'; ?>
 
+<!-- Load functions -->
+
+<?php
+$lists = get_single_list($database, $_GET['list-id']);
+$id = $_GET['list-id'];
+
+//  List name
+
+foreach ($lists as $list) : ?>
+    <h2><?= $list['title'] ?></h2>
+<?php endforeach ?>
+
 <!-- Error message -->
 
 <?php if (isset($errors)) { ?>
     <p><?php echo $errors; ?></p>
 <?php } ?>
-
-<h2><?= $_GET['list-name']; ?></h2>
 
 <!-- within the list, create tasks -->
 

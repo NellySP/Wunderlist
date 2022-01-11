@@ -98,20 +98,16 @@ function tasks_due_today(PDO $database)
 
 // function to get list-name from list-id and user_id
 
-function get_list_name(PDO $database, $id)
+function get_single_list(PDO $database, $id)
 {
     $user_id = $_SESSION['user']['user_id'];
 
-    $statement = $database->query('SELECT title FROM Lists WHERE user_id = :user_id AND id = :id');
+    $statement = $database->query('SELECT * FROM Lists WHERE user_id = :user_id AND id = :id');
     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
     $statement->bindParam(':id', $id, PDO::PARAM_INT);
     $statement->execute();
-    $list_name = $statement->fetchAll(PDO::FETCH_ASSOC);
-    // die(var_dump($list_name));
-    ($list_name);
-    // foreach ($list_name as $title) {
-    //     echo $title;
-    // }
+    $list = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $list;
 }
 
 function getList($list_id, $database)

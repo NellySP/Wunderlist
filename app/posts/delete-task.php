@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
+$task_id = $_GET['task_id'];
+$list_id = $_GET['list_id'];
+$user_id = $_SESSION['user']['user_id'];
+
 
 if (isset($_POST['task'])) {
     $id = $_POST['task'];
@@ -12,4 +16,4 @@ if (isset($_POST['task'])) {
     $statement->bindParam(':id', $id, PDO::PARAM_STR);
     $statement->execute();
 }
-redirect("/single-list.php?list-id=$list_id&list-name=$list_name");
+redirect('/single_list.php?id=' . $list_id);
