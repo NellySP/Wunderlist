@@ -33,7 +33,7 @@ function display_error()
     }
 }
 
-// Function to fetch users list
+// Function to fetch users lists
 
 function get_lists($user_id, $database)
 {
@@ -60,14 +60,13 @@ function get_tasks(PDO $database, $list_id)
 }
 // function to get task-name from list-id and task_id
 
-function get_single_task(PDO $database, $id, $list_id)
+function get_single_task(PDO $database, $id)
 {
     $user_id = $_SESSION['user']['user_id'];
 
-    $statement = $database->query('SELECT * FROM Tasks WHERE user_id = :user_id AND list_id = :list_id AND id = :id');
+    $statement = $database->query('SELECT * FROM Tasks WHERE user_id = :user_id AND id = :id');
     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
     $statement->bindParam(':id', $id, PDO::PARAM_INT);
-    $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
     $statement->execute();
     $task = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $task;
@@ -145,12 +144,13 @@ function task_status(PDO $database, $id)
 
     $status = $statement->fetch(PDO::FETCH_ASSOC);
 
-    foreach ($status as $state) {
+    $state = $status;
 
-        if ($state == true) {
-            echo "completed";
-        } else if ($state == false) {
-            echo " not completed";
-        }
+    return $state;
+
+    if ($state == true) {
+        echo "completed";
+    } else if ($state == false) {
+        echo " not completed";
     }
 }

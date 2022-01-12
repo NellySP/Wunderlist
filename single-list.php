@@ -62,6 +62,7 @@ foreach ($lists as $list) : ?>
     <!-- Edit tasks -->
     <form action="/edit-task.php" method="GET" class="input-form">
         <div>
+            <input class="form-control" type="hidden" name="list-id" id="list-id" value="<?= $id ?>">
             <input class="form-control" type="hidden" name="task-id" id="task-id" value="<?= $task['id'] ?>">
             <input class="form-control" type="hidden" name="task-name" id="task-name" value="<?= $task['title'] ?>">
             <button>Edit task</button>
