@@ -117,3 +117,16 @@ function back()
 }
 
 // check if task is completed
+
+function task_status($task)
+{
+    if (isset($task['completed'])) {
+        $status['completed'] = 'checked';
+        $status['uncompleted'] = '';
+    } else {
+        $status['completed'] = '';
+        $status['uncompleted'] = 'checked';
+    }
+
+    return $status;
+}
