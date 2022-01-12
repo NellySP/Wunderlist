@@ -13,18 +13,28 @@ A task list is a list of tasks to be completed, such as chores or steps toward c
 
 # Code Review
 
-Code review written by [Jane Doh](https://github.com/username).
+Code review written by [Agnes Skönvall](https://github.com/agnesskonvall).
 
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-2. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-3. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-4. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-5. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-6. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-7. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-8. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-9. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-10. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
+1. all-tasks.php:18 - When clicking the checkbox it does not stay as completed, maybe try some other solution for that?
+
+2. all-tasks.php:22 - The delete/x-button looks very big under the checkbox, try to make it a bit smaller or make the checkbox bigger.
+
+3. change-email.php - Great job with comments in your code, easy to navigate in this file for example. I can see that you didn’t
+do that in all your files, a picky thing but why not add some in all files!
+
+4. tip - Consider using a bigger font size in mobile view, now it’s a bit small I think! 
+
+5. when I’m logged in and clicking on a list there Is a warning under “your tasks”.
+
+6. same thing when I try to edit a task, I get warnings on line 21, 29-31 and 36 in edit-task.php. And if I then try to edit my task it doesn’t change.
+
+7. i see you have two files named database.db. The one in your root seems to be empty, consider remove unused files!
+
+8. edit-list.php:28 - The delete and update button is very close to each other which makes it easy for the user to accidentally press the wrong button. Maybe add som space between them?
+
+9. lists.php:16 - There are labels missing in your forms, try to use labels for better accessibility! 
+
+10. good job splitting up all your files! Easy to navigate and not too much in every file, I like! 
 
 # Testers
 
