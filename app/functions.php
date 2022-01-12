@@ -147,7 +147,7 @@ function task_status(PDO $database, $id)
     foreach ($status as $state) {
 
         if ($state == true) {
-            echo "completed";
+            echo " completed";
         } else if ($state == false) {
             echo " not completed";
         }
