@@ -56,15 +56,14 @@ foreach ($lists as $list) : ?>
             <h3><?= ($task['title']); ?></h3>
             <p><?= ($task['description']); ?></p>
             <p>Due:<?= ($task['deadline']); ?></p>
-            <!-- oklart om det här kommer att funka -->
+            <p><?= ($task['id']); ?></p>
             <p><?php $isCompleted ?></p>
-
-
         </li>
     </ul>
     <form action="/app/posts/task-status.php" method="POST">
-        <input type="hidden" name="id" value="<?php $task['id'] ?>">
-        <label for="checkbox"><?php $isCompleted ?></label>
+        <input type="hidden" name="id" value="<?= $task['id'] ?>">
+        <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
+        <label for="checkbox"></label>
         <input type="checkbox" name="checkbox" id="checkbox">
         <button type="submit">Submit</button>
     </form>
