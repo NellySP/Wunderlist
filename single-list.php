@@ -59,7 +59,13 @@ foreach ($lists as $list) : ?>
             <p>Status:<?php task_status($database, $task['id']); ?></p>
         </li>
     </ul>
-    <button>Edit task</button>
+    <form action="/edit-task.php" method="GET" class="input-form">
+        <div>
+            <input class="form-control" type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
+            <input class="form-control" type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
+            <button>Edit task</button>
+        </div>
+    </form>
 <?php endforeach; ?>
 
 <!-- Edit tasks -->

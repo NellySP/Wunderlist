@@ -8,8 +8,8 @@ require __DIR__ . '/views/header.php'; ?>
 <!-- Load functions -->
 
 <?php
-$lists = get_single_list($database, $_GET['list-id']);
-$id = $_GET['list-id']; ?>
+$lists = get_single_task($database, $_GET['task-id']);
+$id = $_GET['task-id']; ?>
 
 <!-- display error messages -->
 
@@ -19,7 +19,7 @@ $id = $_GET['list-id']; ?>
 
 <h3>Edit tasks</h3>
 
-<?php foreach (get_tasks($database, $_GET['list-id']) as $task) : ?>
+<?php foreach (get_single_task($database, $_GET['task-id']) as $task) : ?>
     <div>
 
         <ul>
