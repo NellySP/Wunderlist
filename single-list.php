@@ -5,6 +5,15 @@
 require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php'; ?>
 
+<!-- Edit list -->
+<form action="/edit-list.php" method="GET" class="input-form">
+    <div>
+        <input class="form-control" type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
+        <input class="form-control" type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
+        <button type="submit">Edit List</button>
+    </div>
+</form>
+
 <!-- Load functions -->
 
 <?php
@@ -55,7 +64,7 @@ foreach ($lists as $list) : ?>
         <li>
             <h3><?= ($task['title']); ?></h3>
             <p><?= ($task['description']); ?></p>
-            <p>Due:<?= ($task['deadline']); ?></p>
+            <p>Due: <?= ($task['deadline']); ?></p>
             <p>Status:<?php task_status($database, $task['id']); ?></p>
         </li>
     </ul>
@@ -65,22 +74,9 @@ foreach ($lists as $list) : ?>
             <input class="form-control" type="hidden" name="list-id" id="list-id" value="<?= $id ?>">
             <input class="form-control" type="hidden" name="task-id" id="task-id" value="<?= $task['id'] ?>">
             <input class="form-control" type="hidden" name="task-name" id="task-name" value="<?= $task['title'] ?>">
-            <button>Edit task</button>
+            <button> Edit task </button>
         </div>
     </form>
 <?php endforeach; ?>
-
-
-
-
-<!-- Edit list -->
-<form action="/edit-list.php" method="GET" class="input-form">
-    <div>
-        <input class="form-control" type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
-        <input class="form-control" type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
-        <button type="submit">Edit List</button>
-    </div>
-</form>
-
 
 <?php require __DIR__ . '/views/footer.php'; ?>

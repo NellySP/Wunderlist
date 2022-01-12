@@ -20,6 +20,8 @@ require __DIR__ . '/views/header.php'; ?>
 
 <!-- Overview of all existing lists -->
 
+<h3>Your lists</h3>
+
 <?php foreach (get_lists($_SESSION['user']['user_id'], $database) as $list) : ?>
     <div class="list-view">
         <ul>
