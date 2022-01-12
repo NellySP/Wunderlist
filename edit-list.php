@@ -7,7 +7,7 @@ require __DIR__ . '/views/header.php'; ?>
 
 
 
-<h3>Edit List</h3>
+<h2>Edit List</h2>
 
 <!-- Load functions -->
 
@@ -18,7 +18,7 @@ $id = $_GET['list-id'];
 // List name
 
 foreach ($lists as $list) : ?>
-    <h2>Title: <?= $list['title'] ?></h2>
+    <h3>Title: <?= $list['title'] ?></h3>
 <?php endforeach ?>
 
 <!-- display error messages -->

@@ -15,4 +15,4 @@ if (isset($_POST['task'])) {
     $statement->execute();
 }
 
-back();
+redirect('/lists.php');

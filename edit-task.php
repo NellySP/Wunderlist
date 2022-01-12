@@ -5,6 +5,10 @@
 require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php'; ?>
 
+<!-- Edit tasks -->
+
+<h2>Edit task</h2>
+
 <?php
 $tasks = get_single_task($database, $_GET['task-id']);
 $id = $_GET['task-id'];
@@ -12,7 +16,7 @@ $id = $_GET['task-id'];
 //  List name
 
 foreach ($tasks as $task) : ?>
-    <h2><?= $task['title'] ?></h2>
+    <h3><?= $task['title'] ?></h3>
 <?php endforeach ?>
 
 <ul>
@@ -23,9 +27,6 @@ foreach ($tasks as $task) : ?>
     </li>
 </ul>
 
-<!-- Edit tasks -->
-
-<h3>Edit task</h3>
 
 <!-- Form to mark task as done -->
 <form action="/app/posts/task-status.php" method="POST">
