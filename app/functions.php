@@ -58,7 +58,20 @@ function get_tasks(PDO $database, $list_id)
 
     return $tasks;
 }
+// function to get task-name from list-id and task_id
 
+function get_single_task(PDO $database, $id, $list_id)
+{
+    $user_id = $_SESSION['user']['user_id'];
+
+    $statement = $database->query('SELECT * FROM Tasks WHERE user_id = :user_id AND list_id = :list_id AND id = :id');
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
+    $statement->execute();
+    $task = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $task;
+}
 // function to view all tasks
 
 function get_all_tasks(PDO $database)
@@ -109,20 +122,7 @@ function get_single_list(PDO $database, $id)
     return $list;
 }
 
-// function to get task-name from list-id and task_id
 
-function get_single_task(PDO $database, $id)
-{
-    $user_id = $_SESSION['user']['user_id'];
-
-    $statement = $database->query('SELECT * FROM Tasks WHERE user_id = :user_id AND list_id = :list_id AND id = :id');
-    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-    $statement->bindParam(':id', $id, PDO::PARAM_INT);
-    $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
-    $statement->execute();
-    $task = $statement->fetchAll(PDO::FETCH_ASSOC);
-    return $task;
-}
 
 // redirect back to the page where the form was posted
 

@@ -59,16 +59,16 @@ foreach ($lists as $list) : ?>
             <p>Status:<?php task_status($database, $task['id']); ?></p>
         </li>
     </ul>
+    <!-- Edit tasks -->
     <form action="/edit-task.php" method="GET" class="input-form">
         <div>
-            <input class="form-control" type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
-            <input class="form-control" type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
+            <input class="form-control" type="hidden" name="task-id" id="task-id" value="<?= $task['id'] ?>">
+            <input class="form-control" type="hidden" name="task-name" id="task-name" value="<?= $task['title'] ?>">
             <button>Edit task</button>
         </div>
     </form>
 <?php endforeach; ?>
 
-<!-- Edit tasks -->
 
 
 
