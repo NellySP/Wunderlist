@@ -68,17 +68,17 @@ foreach ($lists as $list) : ?>
             <p><?= ($task['description']); ?></p>
             <p>Due: <?= ($task['deadline']); ?></p>
             <p>Status:<?php task_status($database, $task['id']); ?></p>
+            <!-- Edit tasks -->
+            <form action="/edit-task.php" method="GET" class="input-form">
+                <div>
+                    <input class="form-control" type="hidden" name="list-id" id="list-id" value="<?= $id ?>">
+                    <input class="form-control" type="hidden" name="task-id" id="task-id" value="<?= $task['id'] ?>">
+                    <input class="form-control" type="hidden" name="task-name" id="task-name" value="<?= $task['title'] ?>">
+                    <button> Edit task </button>
+                </div>
+            </form>
         </li>
     </ul>
-    <!-- Edit tasks -->
-    <form action="/edit-task.php" method="GET" class="input-form">
-        <div>
-            <input class="form-control" type="hidden" name="list-id" id="list-id" value="<?= $id ?>">
-            <input class="form-control" type="hidden" name="task-id" id="task-id" value="<?= $task['id'] ?>">
-            <input class="form-control" type="hidden" name="task-name" id="task-name" value="<?= $task['title'] ?>">
-            <button> Edit task </button>
-        </div>
-    </form>
 <?php endforeach; ?>
 
 <?php require __DIR__ . '/views/footer.php'; ?>

@@ -16,9 +16,17 @@
 img {
   width: 200px;
   height: 200px;
+  border-radius: 50%;
+  margin: 10px;
 }
 
 body {
   /* background-color: rgb(235, 222, 204); */
   background-color: rgb(130, 139, 121);
+}
+
+button {
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
