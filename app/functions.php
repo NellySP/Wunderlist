@@ -118,15 +118,24 @@ function back()
 
 // check if task is completed
 
-function task_status($task)
+function task_status(PDO $database, $id)
 {
-    if (isset($task['completed'])) {
-        $status['completed'] = 'checked';
-        $status['uncompleted'] = '';
-    } else {
-        $status['completed'] = '';
-        $status['uncompleted'] = 'checked';
-    }
+    $query = 'SELECT completed FROM Tasks WHERE id = :id';
 
-    return $status;
+    $statement = $database->prepare($query);
+
+    $statement->bindParam(':id', $id, PDO::PARAM_BOOL);
+
+    $statement->execute();
+
+    $status = $statement->fetch(PDO::FETCH_ASSOC);
+
+    foreach ($status as $state) {
+        return $state;
+        if ($state === 1) {
+            echo "completed";
+        } else {
+            echo "not completed";
+        }
+    }
 }

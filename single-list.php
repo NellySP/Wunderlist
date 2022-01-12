@@ -56,7 +56,7 @@ foreach ($lists as $list) : ?>
             <h3><?= ($task['title']); ?></h3>
             <p><?= ($task['description']); ?></p>
             <p>Due:<?= ($task['deadline']); ?></p>
-            <p>Status:</p>
+            <p>Status:<?php task_status($database, $task['id']); ?></p>
         </li>
     </ul>
     <!-- Form to mark task as done -->
