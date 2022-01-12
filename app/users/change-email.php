@@ -7,7 +7,7 @@ require __DIR__ . '/../autoload.php';
 
 
 if (isset($_POST['email'])) {
-    $email = trim($_POST['email']);
+    $email = trim(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
     $user_id = $_SESSION['user']['user_id'];
 
     $statement = $database->prepare('UPDATE Users SET email = :email WHERE user_id = :user_id');
