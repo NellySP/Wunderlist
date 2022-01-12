@@ -5,17 +5,25 @@
 require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php'; ?>
 
+
+
+
 <!-- Load functions -->
 
 <?php
 $lists = get_single_list($database, $_GET['list-id']);
-$id = $_GET['list-id']; ?>
+$id = $_GET['list-id'];
 
+// List name
+
+foreach ($lists as $list) : ?>
+    <h2><?= $list['title'] ?></h2>
+<?php endforeach ?>
+
+<h3>Edit List</h3>
 <!-- display error messages -->
 
 <?= display_error() ?>
-
-<h3>Edit List</h3>
 
 <div class="hidden-update-field">
     <form action="/app/posts/update-list.php" method="post">
