@@ -138,19 +138,18 @@ function task_status(PDO $database, $id)
 
     $statement = $database->prepare($query);
 
-    $statement->bindParam(':id', $id, PDO::PARAM_BOOL);
+    $statement->bindParam(':id', $id, PDO::PARAM_INT);
 
     $statement->execute();
 
     $status = $statement->fetch(PDO::FETCH_ASSOC);
 
-    $state = $status;
+    foreach ($status as $state) {
 
-    return $state;
-
-    if ($state == true) {
-        echo "completed";
-    } else if ($state == false) {
-        echo " not completed";
+        if ($state == true) {
+            echo "completed";
+        } else if ($state == false) {
+            echo " not completed";
+        }
     }
 }
