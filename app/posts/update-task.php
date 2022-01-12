@@ -14,13 +14,13 @@ $title = $_POST['title'];
 // check if title is set, if yes -> set variable
 
 if (isset($_POST['task'])) {
-    $title = trim($_POST['task']);
+    $title = trim(filter_var($_POST['task'], FILTER_SANITIZE_SPECIAL_CHARS));
 }
 
 // description
 
 if (isset($_POST['description'])) {
-    $description = trim($_POST['description']);
+    $description = trim(filter_var($_POST['description'], FILTER_SANITIZE_SPECIAL_CHARS));
 }
 // deadline
 

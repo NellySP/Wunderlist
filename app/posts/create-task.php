@@ -12,8 +12,8 @@ if (empty($_POST['task'])) {
 }
 
 if (isset($_POST['task'])) {
-    $task = trim($_POST['task']);
-    $description = ($_POST['description']);
+    $task = trim(filter_var($_POST['task'], FILTER_SANITIZE_SPECIAL_CHARS));
+    $description = trim(filter_var($_POST['description'], FILTER_SANITIZE_SPECIAL_CHARS));
     $deadline = ($_POST['deadline']);
     $completed = ($_POST['completed']);
     $list_id = ($_POST['list-id']);

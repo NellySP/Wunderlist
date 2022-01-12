@@ -9,7 +9,7 @@ require __DIR__ . '/../autoload.php';
 // Create list
 
 if (isset($_POST['list'])) {
-    $title = trim($_POST['list']);
+    $title = trim(filter_var($_POST['list'], FILTER_SANITIZE_SPECIAL_CHARS));
     $user_id = $_SESSION['user']['user_id'];
 
     if (empty($_POST['title'])) {
