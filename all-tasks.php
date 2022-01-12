@@ -12,7 +12,7 @@
         <li>
             <h3><?= ($task['title']); ?></h3>
             <p><?= ($task['description']); ?></p>
-            <p>Due:<?= ($task['deadline']); ?></p>
+            <p>Due: <?= ($task['deadline']); ?></p>
             <p>Status:<?php task_status($database, $task['id']); ?></p>
 
         </li>
@@ -35,7 +35,7 @@
     </form>
     <form action="/app/posts/delete-task.php" method="post">
         <input type="hidden" name="task" id="task" value="<?= $task['id'] ?>">
-        <button type="submit" class="delete">X</button>
+        <button type="submit" class="delete">Delete task</button>
     </form>
 <?php endforeach; ?>
 

@@ -36,6 +36,8 @@ foreach ($lists as $list) : ?>
 
 <?= display_error() ?>
 
+<h4>Add task below</h4>
+
 <!-- within the list, create tasks -->
 
 <form method="post" action="app/posts/create-task.php" class="input_form">

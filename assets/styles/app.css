@@ -18,10 +18,7 @@ img {
   height: 200px;
 }
 
-.hidden-update-field {
-  display: block;
+body {
+  /* background-color: rgb(235, 222, 204); */
+  background-color: rgb(130, 139, 121);
 }
-
-/* .open-update-field {
-  display: block;
-} */
