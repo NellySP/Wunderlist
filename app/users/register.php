@@ -14,8 +14,8 @@ require __DIR__ . '/../autoload.php';
 // trim and hash values from form input
 
 if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
-    $username = trim($_POST['username']);
-    $email = trim($_POST['email']);
+    $username = trim(filter_var($_POST['username'], FILTER_SANITIZE_SPECIAL_CHARS));
+    $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 }
 
