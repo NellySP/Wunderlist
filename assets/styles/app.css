@@ -1,3 +1,10 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Patrick Hand';
+  font-size: x-large;
+}
+
 .registration-form {
   text-align: center;
   justify-content: center;
