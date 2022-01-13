@@ -13,7 +13,7 @@ A task list is a list of tasks to be completed, such as chores or steps toward c
 
 # Code Review
 
-Code review written by [Agnes Skönvall](https://github.com/agnesskonvall).
+Code review written by [Alice Nyberg](https://github.com/alicenyberg).
 
 1. all-tasks.php:18 - When clicking the checkbox it does not stay as completed, maybe try some other solution for that?
 
