@@ -146,9 +146,22 @@ function task_status(PDO $database, $id)
 
     foreach ($status as $state) {
         if ($state == true) {
-            echo " completed";
+            echo " completed ✅";
         } else if ($state == false) {
-            echo " not completed";
+            echo " not completed ❌";
         }
+    }
+}
+
+
+function complete_all(PDO $database)
+{
+    $query = 'SELECT completed FROM Tasks';
+
+    $statement = $database->query($query);
+    $status = $statement->fetchALl(PDO::FETCH_ASSOC);
+
+    foreach ($status as $state) {
+        echo $state;
     }
 }

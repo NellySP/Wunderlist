@@ -14,6 +14,15 @@ require __DIR__ . '/views/header.php'; ?>
     </div>
 </form>
 
+<form action="app/posts/complete-list.php" method="GET" class="input-form">
+    <div>
+        <input class="form-control" type="hidden" name="list-id" id="list-id" value="<?= $_GET['list-id'] ?>">
+        <input class="form-control" type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
+        <button type="submit">Complete All</button>
+    </div>
+</form>
+
+
 <!-- Load functions -->
 
 <?php
