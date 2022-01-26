@@ -42,3 +42,10 @@ Tested by the following people:
 
 1. Sophie Wulff
 2. Emma Hansson
+
+# Wunderlist +
+
+[Oliver Davis](https://github.com/DavisDavisDavis/Wunderlist-2) added two features: 
+
+1: Welcome mail
+2: Mark all tasks in a list as completed with one click 
