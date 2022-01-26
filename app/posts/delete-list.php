@@ -7,7 +7,6 @@ require __DIR__ . '/../autoload.php';
 
 if (isset($_POST['list'])) {
     $id = $_POST['list'];
-    die(var_dump($id));
 
     $statement = $database->prepare('DELETE FROM Lists WHERE id = :id');
     $statement->bindParam(':id', $id, PDO::PARAM_STR);
