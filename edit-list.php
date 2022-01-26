@@ -15,6 +15,7 @@ require __DIR__ . '/views/header.php'; ?>
 $lists = get_single_list($database, $_GET['list-id']);
 $id = $_GET['list-id'];
 
+
 // List name
 
 foreach ($lists as $list) : ?>
@@ -31,8 +32,8 @@ foreach ($lists as $list) : ?>
         <input type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
         <input class="form-control" type="text" name="title" id="title" placeholder="enter new title" required>
         <button type="submit" class="button-main">Update</button>
+    </form>
 </div>
-</form>
 <form action="/app/posts/delete-list.php" method="post">
     <input type="hidden" name="list" id="list" value="<?= $list['id'] ?>">
     <button type="submit" class="delete">Delete list</button>

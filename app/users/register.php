@@ -64,5 +64,7 @@ if ($_POST['password'] === '') {
 
     // redirect user to index page
 
+    send_mail($email);
+
     redirect('/login.php');
 }

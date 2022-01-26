@@ -2,6 +2,45 @@
 
 declare(strict_types=1);
 
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require __DIR__ . '/../vendor/autoload.php';
+
+function send_mail($email_recipient)
+{
+    $mail = new PHPMailer();
+
+    try {
+        //Server settings
+        $mail->isSMTP();
+        $mail->Host = 'smtp.mailtrap.io';
+        $mail->SMTPAuth = true;
+        $mail->Port = 2525;
+        $mail->Username = '41ddeff6cad56a';
+        $mail->Password = '57da91fa1bbaa4';
+        //Recipients
+        $mail->setFrom('wunderlist@example.com', 'Mailer');
+        $mail->addAddress($email_recipient);     //Add a recipient
+        $mail->addReplyTo('wunderlist@example.com', 'support');
+
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = 'Welcome to wunderlist <3';
+        $mail->Body    = '<img src="https://c.tenor.com/E33HkUhvr9EAAAAC/welcome.gif" alt="">';
+        $mail->AltBody = 'Welcome to Wunderlist <3';
+
+        $mail->send();
+        echo 'Message has been sent';
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+}
+
 function redirect(string $path)
 {
     header("Location: ${path}");
@@ -146,9 +185,9 @@ function task_status(PDO $database, $id)
 
     foreach ($status as $state) {
         if ($state == true) {
-            echo " completed";
+            echo " completed ✅";
         } else if ($state == false) {
-            echo " not completed";
+            echo " not completed ❌";
         }
     }
 }
