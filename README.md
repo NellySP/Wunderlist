@@ -47,5 +47,5 @@ Tested by the following people:
 
 [Oliver Davis](https://github.com/DavisDavisDavis/Wunderlist-2) added two features: 
 
-1: Welcome mail
-2: Mark all tasks in a list as completed with one click 
+1. Welcome mail
+2. Mark all tasks in a list as completed with one click 
