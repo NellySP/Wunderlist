@@ -6,29 +6,29 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitb0530fa77903820c50b0114441121d7f
 {
-    public static $prefixLengthsPsr4 = array (
-        'P' => 
-        array (
+    public static $prefixLengthsPsr4 = array(
+        'P' =>
+        array(
             'PHPMailer\\PHPMailer\\' => 20,
         ),
-        'A' => 
-        array (
+        'A' =>
+        array(
             'App\\' => 4,
         ),
     );
 
-    public static $prefixDirsPsr4 = array (
-        'PHPMailer\\PHPMailer\\' => 
-        array (
+    public static $prefixDirsPsr4 = array(
+        'PHPMailer\\PHPMailer\\' =>
+        array(
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
-        'App\\' => 
-        array (
+        'App\\' =>
+        array(
             0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
-    public static $classMap = array (
+    public static $classMap = array(
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
@@ -38,7 +38,6 @@ class ComposerStaticInitb0530fa77903820c50b0114441121d7f
             $loader->prefixLengthsPsr4 = ComposerStaticInitb0530fa77903820c50b0114441121d7f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitb0530fa77903820c50b0114441121d7f::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInitb0530fa77903820c50b0114441121d7f::$classMap;
-
         }, null, ClassLoader::class);
     }
 }
